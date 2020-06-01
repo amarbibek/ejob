@@ -1,0 +1,165 @@
+.edit-delete {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* justify-content: space-around; */
+}
+
+.edit-delete > button {
+  width: 100%;
+  height: 35px;
+  cursor: pointer;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  border: none;
+}
+
+/* .edit-delete > button{
+  transition-duration: 2s;
+} */
+
+.edit-delete > button:hover {
+  font-size: 16px;
+  transition-duration: 0.6s;
+}
+
+.edit-button {
+  background-color: #333333;
+  opacity: 0.76;
+}
+
+.delete-button {
+  background-color: #2e1435;
+  opacity: 0.99;
+}
+.edit-button:hover {
+  background-color: #fff;
+  color: #333333;
+  border: 2px solid #333333;
+}
+.delete-button:hover {
+  background-color: #fff;
+  color: #2e1435;
+  border: 2px solid #2e1435;
+}
+
+#job-entry {
+  /* grid-row: 2 / span 4; */
+  /* background-color: black; */
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100%;
+}
+
+#add-job {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* position: fixed; */
+}
+
+textarea {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: aliceblue;
+  resize: none;
+}
+
+textarea:focus {
+  background: #fff;
+}
+
+#enter-job-title {
+  height: 15%;
+  width: 90%;
+}
+
+#enter-job-details {
+  height: 20%;
+  width: 90%;
+}
+
+#add-tag {
+  width: 90%;
+}
+
+add-tag > label {
+  width: 30%;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  margin-bottom: 5px;
+  cursor: auto;
+}
+
+#buttons {
+  width: 90%;
+}
+
+.add-job-btn {
+  width: 100%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #2e1435;
+  height: 36px;
+  font-size: 20px;
+}
+
+.add-job-btn:hover {
+  color: black;
+  background-color: #fff;
+  border: 1px solid #2e1435;
+  transition-duration: 0.9s;
+}
+
+#upload-file {
+  width: 90%;
+  height: 20%;
+  margin-top: 50px;
+}
+
+[type="file"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+[type="file"] + label {
+  background-color: #2e1435;
+  /* border-radius: 4rem; */
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 4rem;
+  line-height: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: background-color 0.3s;
+}
+
+[type="file"]:focus + label,
+[type="file"] + label:hover {
+  background-color: #fff;
+  color: #2e1435;
+  transition-duration: 0.9s;
+  border: 1px solid #2e1435;
+  font-weight: bolder;
+}

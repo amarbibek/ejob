@@ -13,7 +13,7 @@ error_reporting(0);
     <link href="./toastr/css.css" rel="stylesheet" type="text/css" />
     <link href="./css/admin-login.css" rel="stylesheet" type="text/css" />
 	<link href="./css/adminpanel.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="./css/sidebar.css">
+	<!-- <link rel="stylesheet" href="./css/sidebar.css"> -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,7 +32,8 @@ error_reporting(0);
 						while($row = $result->fetch_assoc()) {
 							echo '<li class="dd">';
 								echo '<div class="dropdown">';
-									echo '<button class="dropbtn ddl-cat" data-cat_id="'.$row['job_category_id'].'">' .$row['category'].'</button>';
+									echo '<button class="dropbtn" data-cat_id="'.$row['job_category_id'].'">' .$row['category'].'</button>';
+									// echo '<button class="dropbtn ddl-cat" data-cat_id="'.$row['job_category_id'].'">' .$row['category'].'</button>';
 									echo '<div class="dropdown-content">';
 							// 			echo '<a href="#">Experienced</a>';
 							// 			echo '<a href="#">Fresher</a>';
@@ -113,7 +114,7 @@ error_reporting(0);
 					});
 				}
 				$(function(){
-					$(".ddl-cat").hover(function(){
+					$(".dropbtn").hover(function(){
 						$hovered_ele =$(this);
 						// console.log($hovered_ele.text());
 						$cat_id=$(this).data("cat_id");
@@ -124,7 +125,7 @@ error_reporting(0);
 							$anchor="";//$hovered_ele.text(); //+'<div class="dropdown-content">';
 							$.each($data, function(i,v){
 								if(v !== ""){
-									$anchor +='<a href="category_jobs.php?category='+ v.split("-")[0] +'&page_no=1">'+v.split("-")[1]+'</a><br/>';
+									$anchor +='<a href="category_jobs.php?category='+ v.split("-")[0] +'&page_no=1">'+v.split("-")[1]+'</a>';
 								}
 							});
 							$anchor += '</div>'

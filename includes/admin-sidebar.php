@@ -6,12 +6,12 @@
 <!-- <div id="wrapper">
 <div id="sidebar-wrapper">-->
 
-    <ul class="sidebar-nav1"> 
+    <!-- <ul class="sidebar-nav1"> 
         <li><a href="requests.php">REQUESTS</a></li>
         <li><a href="add_admin.php">ADD ADMIN</a></li>
         <li><a href="view_users.php">VIEW USERS</a></li>
         <li><a href="view_all_cargos.php">CARGOS</a></li>
         <li><a href="view_feedbacks.php">FEEDBACKS</a></li>
-    </ul>
+    </ul> -->
 <!-- </div>
 </div> -->

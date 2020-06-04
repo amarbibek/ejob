@@ -140,7 +140,7 @@ if(isset($_POST["add-job-btn"]) && !empty($_FILES["file"]["name"])) {
         echo '    <h3>'. $row["job_description"].'</h3>';
         echo '  </div>';
         if($row['pdf_url']!=NULL){
-          echo '<div class="job1-details"><a href=  "'.$row["pdf_url"].'" target="_blank">PDF</a></div>';
+          echo '<div class="job1-details"><a href="'.$row["pdf_url"].'" target="_blank">PDF</a></div>';
         }
         echo '  <div class="edit-delete">';
         echo '    <button name="edit" class="edit-button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';

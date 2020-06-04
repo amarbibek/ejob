@@ -54,6 +54,11 @@ check_admin_login();
         }
       }
   ?>
+    <div id='search-main'>
+      <input  type='text' id='search-input' name='search-input' placeholder='Searh jobs' />
+      <input  ttpe='submit' id='search-btn' name='search-btn' value='Search' onclick='' />
+    </div>
+
     <div class="wrapper"> 
       <div class="job-container"> 
         <?php
@@ -163,20 +168,10 @@ check_admin_login();
         </div>
       </div>
 
-      <!-- pagination, i hate it so fishh this , use mine -->
-      <!-- <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a class='active' href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">&raquo;</a>
-      </div>  -->
-      <div>
-        <a href="admin.php?page_no=<?php echo $initial_page_no-1; ?>"><< Previous</a>
-        <a href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>">Next >></a>
+
+      <div id='pagination'>
+        <a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1; ?>"><< Previous</a>
+        <a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>">Next >></a>
     </div>
 
 

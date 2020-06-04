@@ -10,13 +10,16 @@ error_reporting(0);
     <meta name="viewport" content="width=device-width">
     <title>Job portal</title>
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <link href="./toastr/css.css" rel="stylesheet" type="text/css" />
-    <link href="./css/admin-login.css" rel="stylesheet" type="text/css" />
-	<link href="./css/adminpanel.css" rel="stylesheet" type="text/css" />
-	<!-- <link rel="stylesheet" href="./css/sidebar.css"> -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href='./css/pagination.css' rel="stylesheet" type='text/css'>
 
+<!--     <link href="./toastr/css.css" rel="stylesheet" type="text/css" />
+    <link href="./css/admin-login.css" rel="stylesheet" type="text/css" />
+	<link href="./css/adminpanel.css" rel="stylesheet" type="text/css" /> -->
+
+	<!-- <link rel="stylesheet" href="./css/sidebar.css"> -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+ -->  
 
     <link rel="shortcut icon" href="img/favicon.ico" />
   </head>
@@ -97,7 +100,7 @@ error_reporting(0);
 					} ?>
 					
 					<!-- <li><span id ="login-link" onclick="openLogin()">Admin Login</span></li> -->
-					<li><span id ="notification" onclick="openNav()">Notification</span></li>
+					<!-- <li><span id ="notification" onclick="openNav()">Notification</span></li> -->
 				</ul>
 			</nav>
 			<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -142,7 +145,7 @@ error_reporting(0);
 		</header>
 
 		<!-- notification panel -->
-		<div id="mySidenav" class="sidenav">
+		<!-- <div id="mySidenav" class="sidenav">
 			<a href="#" class="closebtn" onclick="closeNav()">&times;</a>
 			<a href="#">No new notification </a>
-		</div>
+		</div> -->

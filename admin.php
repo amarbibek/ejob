@@ -66,7 +66,7 @@ check_admin_login();
           $initial_page_no=$_GET['page_no']; 
           $page_no=(($initial_page_no-1)*10);
        
-          $query="SELECT * FROM `jobs` WHERE `is_visible`=1 LIMIT 10 OFFSET $page_no";
+          $query="SELECT * FROM `jobs` WHERE `is_visible`=1 LIMIT 9 OFFSET $page_no";
       		$result = $conn->query($query);
 
       			if ($result->num_rows > 0) { 

@@ -6,7 +6,7 @@ include_once("./db-connection/connection.php");
 <div class="wrapper"> 
 	<div class= "job-container">
 		<?php
-			$query="SELECT * FROM `jobs` LIMIT 10";
+			$query="SELECT * FROM `jobs` LIMIT 9";
 			$result = $conn->query($query);
 
 			if ($result->num_rows > 0) { 

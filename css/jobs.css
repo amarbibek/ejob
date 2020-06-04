@@ -1,0 +1,49 @@
+.wrapper {
+  width: 100%;
+  margin-top: 2.2%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 70% 25%;
+}
+.job-container a {
+  text-decoration: none;
+}
+
+.job-container {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 30% 30% 30%;
+  grid-row-gap: 20px;
+}
+.jobs {
+  padding: 2%;
+}
+
+.job-title a{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #2196f3;
+}
+
+.job-title a:visited{
+  color: #2196f3;
+}
+.job-details a{
+  font-family: serif; 
+  font-size: 16px;  
+  color:  #101010;
+}
+.job-details a:visited{
+  color:  #101010;
+}
+
+.job-pdf{
+  float: right;
+  color: #2e1435;
+}
+
+/*--------------------------------------For development only------------------------------------------------*/
+.jobs:hover {
+  border: 1px black ridge;
+}
+

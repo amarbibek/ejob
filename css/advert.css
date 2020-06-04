@@ -1,0 +1,14 @@
+#advert {
+  /* grid-row: 2 / span 4; */
+  /* background-color: black; */
+  width: 100%;
+  height: 100%;
+}
+
+#advert iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: fixed;
+}
+

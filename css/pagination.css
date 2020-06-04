@@ -1,12 +1,18 @@
 #pagination{
-	width: 70%;
+	width: 68.78%;
 	height: 24px;
-	border: 1px solid black;
 }
 
 #pagination  a{
 	text-decoration: none;
 	font-size: 20px;
+	font-family: Georgia, serif;
+	font-weight: bolder;
+	color: #2e1435;
+}
+
+#pagination  a:visited{
+	color: #2e1435;
 }
 
 #pagination #page-prev{
@@ -15,4 +21,9 @@
 
 #pagination #page-next{
 	float: right;
+}
+
+/*------------------------------------------For development only-----------------------------------------------------*/
+#pagination{
+	border: 1px solid black;
 }

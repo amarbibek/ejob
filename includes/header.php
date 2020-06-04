@@ -11,6 +11,13 @@ error_reporting(0);
     <title>Job portal</title>
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <link href='./css/pagination.css' rel="stylesheet" type='text/css'>
+    <link href='./css/dropdown.css' rel="stylesheet" type='text/css'>
+    <link href='./css/jobs.css' rel="stylesheet" type='text/css'>
+    <link href='./css/header.css' rel="stylesheet" type='text/css'>
+    <link href='./css/footer.css' rel="stylesheet" type='text/css'>
+
+
+
 
 <!--     <link href="./toastr/css.css" rel="stylesheet" type="text/css" />
     <link href="./css/admin-login.css" rel="stylesheet" type="text/css" />

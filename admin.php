@@ -114,9 +114,7 @@ if(isset($_POST["add-job-btn"]) && !empty($_FILES["file"]["name"])) {
   ?>
     <div class="wrapper"> 
     <div class="job-container"> 
-<?php
-  include("./includes/admin-sidebar.php");
-?>
+ 
     <?php
     // $category_id=$_GET['category'];
     $initial_page_no=$_GET['page_no']; 
@@ -134,7 +132,7 @@ if(isset($_POST["add-job-btn"]) && !empty($_FILES["file"]["name"])) {
         // echo '</div>';
         echo '<div class="jobs">';
         echo '  <div class="job-title">';
-        echo '    <a href="#"><h2>'. $row["institute"].'</h2></a>';
+        echo '    <h2><a href="#">'. $row["institute"].'</a></h2>';
         echo '  </div>';
         echo '  <div class="job-details">';
         echo '    <h3>'. $row["job_description"].'</h3>';

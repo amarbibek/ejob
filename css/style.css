@@ -14,7 +14,7 @@ header {
   height: 40px;
   /* border: 3px solid #2e1435; */
   /* float: right; */
-  overflow: flow;
+  overflow: visible;
   background-color: #333;
 }
 

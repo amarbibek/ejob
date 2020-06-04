@@ -37,7 +37,7 @@
               Jawaharlal Nehru University, <br />
               New Delhi 110067 
           </p>
-          <span id='gototop'><a onclick = 'goToTop()'> Top &#8607 </a></span>
+          <div id='gototop'><a onclick = 'goToTop()'> Top &#8607 </a></div>
         </div>
       </div>
 		</footer>

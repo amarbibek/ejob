@@ -15,13 +15,11 @@ error_reporting(0);
     <link href='./css/jobs.css' rel="stylesheet" type='text/css'>
     <link href='./css/header.css' rel="stylesheet" type='text/css'>
     <link href='./css/footer.css' rel="stylesheet" type='text/css'>
-
-
-
-
-<!--     <link href="./toastr/css.css" rel="stylesheet" type="text/css" />
     <link href="./css/admin-login.css" rel="stylesheet" type="text/css" />
-	<link href="./css/adminpanel.css" rel="stylesheet" type="text/css" /> -->
+    <link href="./css/adminpanel.css" rel="stylesheet" type="text/css" />
+	<link href="./toastr/css.css" rel="stylesheet" type="text/css" />
+    
+	
 
 	<!-- <link rel="stylesheet" href="./css/sidebar.css"> -->
 	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">

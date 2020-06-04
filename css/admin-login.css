@@ -1,16 +1,14 @@
-* {
+/*#limiter * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-}
-
-body,
-html {
   height: 100%;
   font-family: Georgia, "Times New Roman", Times, serif;
-}
+}*/
 
-a {
+
+
+#limiter a {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 14px;
   line-height: 1.7;
@@ -19,36 +17,36 @@ a {
   transition: all 0.4s;
 }
 
-a:focus {
+#limiter a:focus {
   outline: none !important;
 }
 
-a:hover {
+#limiter a:hover {
   text-decoration: none;
   color: #403866;
 }
 
-input {
+#limiter input {
   outline: none;
   border: none;
 }
 
-input::-webkit-input-placeholder {
+#limiter input::-webkit-input-placeholder {
   color: #8f8fa1;
 }
 
-label {
+#limiter label {
   display: block;
   margin: 0;
 }
 
-button {
+#limiter button {
   outline: none !important;
   border: none;
   background: transparent;
 }
 
-button:hover {
+#limiter button:hover {
   cursor: pointer;
 }
 
@@ -147,7 +145,7 @@ button:hover {
   font-family: Georgia, "Times New Roman", Times, serif;
   width: 100%;
 }
-#forgot > a {
+#forgot  a {
   text-decoration: none;
   font-size: 16px;
   color: #311738;
@@ -184,5 +182,6 @@ button:hover {
   font-size: 20px;
   color: #fff;
   background-color: #333333;
+  border: 3px solid #2e1435;
   transition: all 0.4s;
 }

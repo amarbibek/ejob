@@ -54,11 +54,11 @@ check_admin_login();
         }
       }
   ?>
-    <div id='search-main'>
+  <!--   <div id='search-main'>
       <input  type='text' id='search-input' name='search-input' placeholder='Searh jobs' />
-      <input  ttpe='submit' id='search-btn' name='search-btn' value='Search' onclick='' />
+      <input  type='submit' id='search-btn' name='search-btn' value='Search' onclick='' />
     </div>
-
+ -->
     <div class="wrapper"> 
       <div class="job-container"> 
         <?php
@@ -74,14 +74,15 @@ check_admin_login();
       		
               echo '<div class="jobs">';
               echo '  <div class="job-title">';
+              if($row['pdf_url']!=NULL){
+                echo '<div class="job-pdf"><a href="'.$row["pdf_url"].'" target="_blank">&#10247;</a></div>';
+              }
               echo '    <h2><a href="#">'. $row["institute"].'</a></h2>';
               echo '  </div>';
               echo '  <div class="job-details">';
               echo '    <h3>'. $row["job_description"].'</h3>';
               echo '  </div>';
-              if($row['pdf_url']!=NULL){
-                echo '<div class="job1-details"><a href="'.$row["pdf_url"].'" target="_blank">PDF</a></div>';
-              }
+             
               echo '  <div class="edit-delete">';
               echo '    <button name="edit" class="edit-button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';
               echo '    <button name="delete" class="delete-button" data-job_id="'.$row['job_id'].'" onclick="delete_job(this)">';
@@ -101,10 +102,10 @@ check_admin_login();
             <h2> Enter New Job Here </h2>
             <label id='label-job-title' name='label-job-title'> Job Title: </label> <br />
             <!-- <textarea name='enter-job-title' id='enter-job-title' autofocus> </textarea><br /> -->
-            <textarea name='job-title' id='enter-job-title' autofocus> </textarea><br />
+            <textarea name='job-title' id='enter-job-title' required> </textarea><br />
             <label id='label-job-details' name='label-job-details'> Job Details: </label><br />
             <!-- <textarea id='enter-job-details' name='enter-job-detail'> </textarea><br /> -->
-            <textarea id='enter-job-details' name='job-detail'> </textarea><br />
+            <textarea id='enter-job-details' name='job-detail' required> </textarea><br />
            
             <div id='add-tag'>
             

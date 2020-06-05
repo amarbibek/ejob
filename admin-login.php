@@ -4,58 +4,7 @@ include_once("./db-connection/connection.php");
 // header('location:admin.php');
 ?>
 
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>
-      Admin Login
-    </title>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <link href="./css/admin-login.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="img/favicon.ico" />
-  </head>
-  <body style='overflow-y: hidden'>
-    <header>
-			<nav>
-  		
-				<ul id='navigation'>
-          <li>	<span><a href="index.html"><img id="logo" src="img/logo1.png"/></a>	</span></li>
-          <li class='dd'>
-            <div class="dropdown">
-              <button class="dropbtn">Category</button>
-              <div class="dropdown-content">
-                <a href="#">Experienced</a>
-                <a href="#">Fresher</a>
-              </div>
-						</div>
-					<li>	
-					<li class='dd'>
-	  					 <div class="dropdown">
-						    <button class="dropbtn">Profession</button>
-						    <div class="dropdown-content">
-						      <a href="#">Government</a>
-						      <a href="#">PSU</a>
-						      <a href="#">IT</a>
-						      <a href="#">Industrial</a>
-							</div>
-						</div>
-					<li>
-					<li class='dd'>
-	  					 <div class="dropdown">
-						    <button class="dropbtn">Post</button>
-						    <div class="dropdown-content">
-						      <a href="#">Clerk</a>
-						      <a href="#">PO</a>
-						      <a href="#">Administration</a>
-							</div>
-						</div>
-					<li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</nav>
-		</header> -->
+
 <?php
   if(isset($_POST['btn-login'])){
     $username=$_POST['username'];

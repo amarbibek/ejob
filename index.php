@@ -2,7 +2,11 @@
 include("./includes/header.php");
 include_once("./db-connection/connection.php");
 ?>
-      
+
+<?php
+include("./includes/search.php");
+?>
+
 <div class="wrapper"> 
 	<div class= "job-container">
 		<?php

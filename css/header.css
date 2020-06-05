@@ -36,5 +36,28 @@ header li a {
 
 header li a:hover {
   background-color: #111;
+  cursor: default;
 }
 
+#li-logo a:hover{
+  background-color: white;
+
+}
+
+#logout{
+  color: #2196f3;
+  border: 1px solid #fff;
+}
+
+/*@media only screen and (max-width: 400px) {
+  header{
+    overflow: hidden;
+  }
+
+}*/
+
+@media only screen and (max-width: 1000px) {
+  header .anchor-header{
+    visibility: hidden;
+  }
+}

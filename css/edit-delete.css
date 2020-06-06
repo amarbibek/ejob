@@ -2,6 +2,8 @@
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
+  border: 1px solid black;
+  margin-top: auto;
   /*position: absolute;*/
 /*  position: sticky;*/
   
@@ -10,7 +12,7 @@
 .edit-delete  button {
   width: 100%;
   height: 35px;
-  cursor: pointer;
+  cursor: default;
   color: #fff;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 14px;
@@ -36,14 +38,14 @@
   opacity: 0.99;
 }
 .edit-button:hover {
-  background-color: #fff;
-  color: #333333;
+  background-color: black;
+  color: #fff;
   border: 2px solid #333333;
 }
 .delete-button:hover {
-  background-color: #fff;
-  color: #2e1435;
-  border: 2px solid #2e1435;
+  background-color: #333333;
+  color: #fff;
+  border: 2px solid #333333;
 }
 
 #job-entry {

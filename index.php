@@ -10,7 +10,7 @@ include("./includes/search.php");
 <div class="wrapper"> 
 	<div class= "job-container">
 		<?php
-			$query="SELECT * FROM `jobs` LIMIT 9";
+			$query="SELECT * FROM `jobs` LIMIT 18";
 			$result = $conn->query($query);
 
 			if ($result->num_rows > 0) { 
@@ -32,18 +32,17 @@ include("./includes/search.php");
 		
 	</div>
 	
-	<!-- <div id='advert'>
-		<iframe src='linodeAd.html' title=""></iframe>
-	</div> -->
+	<div id='advert'>
+		<!-- <iframe src='linodeAd.html' title=""></iframe> -->
+	</div>
 </div>
 
 <!-- TODO: remove side panel and make modal insted for login -->
 <!-- I've written login code below if login fails then reain form else redirect -->
-<div id='pagination'>
-    <a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1; ?>"> &#8249;&#8249;Previous</a>
-    <a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>">Next&#8250;&#8250; </a>
-</div> 
-			<!-- @@@modify these function for index.php@@@iminfinity -->
+<?php
+	include("./includes/pagination.php");
+?>
+
 
 <?php
 // if(isset($_POST['login'])){

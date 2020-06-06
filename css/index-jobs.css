@@ -15,6 +15,7 @@
   grid-template-columns: 30% 30% 30%;
   grid-row-gap: 20px;
 }
+
 .jobs {
   padding: 2%;
 }
@@ -42,8 +43,9 @@
   color: #2e1435;
 }
 
+
 /*--------------------------------------For development only------------------------------------------------*/
-.jobs:hover {
+.jobs:hover{
   border: 1px black ridge;
 }
 

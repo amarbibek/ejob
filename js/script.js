@@ -18,16 +18,18 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   	if (document.documentElement.scrollTop > 20) {
     	document.getElementById('gototop').style.display = "block";
-    	document.getElementById('gototop').style.color = "#2196f3";
-   		if(document.documentElement.scrollTop > 337){    //this is just temporary 
-	    	document.getElementById('gototop').style.display = "block";
-			document.getElementById('gototop').style.color = "white";
+    	document.getElementById('gototop').style.color = "black";
+
+   	  if(document.documentElement.scrollTop > 1000){    //this is just temporary 
+	     document.getElementById('gototop').style.display = "block";
+			 document.getElementById('gototop').style.color = "white";
 		}
   	} 
   	else{
 		document.getElementById('gototop').style.display = "none";
   	}
 }  
+
 
 function goToTop() {
 	document.documentElement.scrollTop = 0;

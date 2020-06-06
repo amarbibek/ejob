@@ -12,17 +12,20 @@ error_reporting(0);
 
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <link href='./css/pagination.css' rel="stylesheet" type='text/css'>
-    <link href='./css/dropdown.css' rel="stylesheet" type='text/css'>
-    <link href='./css/jobs.css' rel="stylesheet" type='text/css'>
-    <link href='./css/header.css' rel="stylesheet" type='text/css'>
-    <link href='./css/footer.css' rel="stylesheet" type='text/css'>
+    <link href='./css/pagination.css' rel="stylesheet" type='text/css' />
+    <link href='./css/dropdown.css' rel="stylesheet" type='text/css' />
+    <link href='./css/index-jobs.css' rel="stylesheet" type='text/css' />
+    <link href='./css/header.css' rel="stylesheet" type='text/css' />
+    <link href='./css/footer.css' rel="stylesheet" type='text/css' />
     <link href="./css/admin-login.css" rel="stylesheet" type="text/css" />
-    <link href="./css/adminpanel.css" rel="stylesheet" type="text/css" />
+    <link href="./css/edit-delete.css" rel="stylesheet" type="text/css" />
 	<link href="./toastr/css.css" rel="stylesheet" type="text/css" />
 	<link href="./css/advert.css" rel="stylesheet" type="text/css" />
-
+	<link href="./css/admin-jobs.css" rel="stylesheet" type="text/css" />
 	<link href="./css/search.css" rel="stylesheet" type="text/css" />
+
+	<link href="./css/about.css" rel="stylesheet" type="text/css" />
+	<link href="./css/contact.css" rel="stylesheet" type="text/css" />
 
 	
 
@@ -65,7 +68,7 @@ error_reporting(0);
 						 echo '<li class="anchor-header"><a href="admin-login.php">Admin Login</a></li>';
 						} else {
 						echo '<li class="anchor-header"><a href="admin.php?page_no=1">Admin Panel</a></li>';
-					    echo '<li class="anchor-header"><a href="logout.php">Log out</a></li>';
+					    echo '<li  id="logout-btn"><a href="logout.php" title="logout">Logout</a></li>';
 					} ?>
 					
 				</ul>

@@ -59,28 +59,28 @@ check_admin_login();
       <input  type='submit' id='search-btn' name='search-btn' value='Search' onclick='' />
     </div>
  -->
-    <div class="wrapper"> 
-      <div class="job-container"> 
+    <div class="admin-wrapper"> 
+      <div class="admin-job-container"> 
         <?php
        
           $initial_page_no=$_GET['page_no']; 
           $page_no=(($initial_page_no-1)*10);
        
-          $query="SELECT * FROM `jobs` WHERE `is_visible`=1 LIMIT 9 OFFSET $page_no";
+          $query="SELECT * FROM `jobs` WHERE `is_visible`=1 LIMIT 18 OFFSET $page_no";
       		$result = $conn->query($query);
 
       			if ($result->num_rows > 0) { 
       			while($row = $result->fetch_assoc()) {
       		
-              echo '<div class="jobs">';
-              echo '  <div class="job-title">';
+              echo '<div class="admin-jobs" >';
+              echo '  <div class="admin-job-title">';
               if($row['pdf_url']!=NULL){
-                echo '<div class="job-pdf"><a href="'.$row["pdf_url"].'" target="_blank">&#10247;</a></div>';
+                echo '<div class="admin-job-pdf"><a href="'.$row["pdf_url"].'" target="_blank">&#10247;</a></div>';
               }
-              echo '    <h2><a href="#">'. $row["institute"].'</a></h2>';
+              echo '    <a href="#">'. $row["institute"].'</a>';
               echo '  </div>';
-              echo '  <div class="job-details">';
-              echo '    <h3>'. $row["job_description"].'</h3>';
+              echo '  <div class="admin-job-details">';
+              echo '    '. $row["job_description"].'';
               echo '  </div>';
              
               echo '  <div class="edit-delete">';
@@ -170,6 +170,10 @@ check_admin_login();
       </div>
 
 
+
+<?php
+  // include("./includes/pagination.php");
+?> 
       <div id='pagination'>
         <a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1; ?>"><< Previous</a>
         <a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>">Next >></a>

@@ -1,17 +1,22 @@
 #pagination{
 	width: 68.78%;
-	height: 24px;
+	height: 28px;
 }
+
 
 #pagination  a{
 	text-decoration: none;
-	font-size: 20px;
+	/*font-size: 20px;*/
 	font-family: Georgia, serif;
 	font-weight: bolder;
-	color: #2e1435;
+	color: #2196f3;
 }
 
 #pagination  a:visited{
+	color: #4f5d95;
+}
+
+#pagination a:hover{
 	color: #2e1435;
 }
 
@@ -23,7 +28,15 @@
 	float: right;
 }
 
-/*------------------------------------------For development only-----------------------------------------------------*/
-#pagination{
-	border: 1px solid black;
+.arrow{
+	font-size: 35px;
 }
+
+.prev-next{
+	font-size: 28px
+}
+
+/*------------------------------------------For development only-----------------------------------------------------*/
+/*#pagination{
+	border: 1px solid black;
+}*/

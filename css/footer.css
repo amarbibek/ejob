@@ -13,6 +13,10 @@ footer {
   bottom: -1px; */
 }
 
+footer h2{
+  color: #2196f3;
+}
+
 footer ul {
   list-style-type: none;
   margin: 0;
@@ -55,6 +59,11 @@ footer img {
   margin: 0;
   height: 40px;
 }
+
+#newsletter{
+  margin-bottom: 16px;
+}
+
 
 #newsletter_email_button,
 #newsletter_email {
@@ -112,4 +121,18 @@ footer span a {
 
 #gototop:hover {
   cursor: pointer;
+
+}
+
+@media (max-width: 1000px){
+  footer img{
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@media (max-width: 1000px){
+  #newsletter_email_button,#newsletter_email {
+  font-size: 12px;
+  }
 }

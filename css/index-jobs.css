@@ -49,3 +49,29 @@
   border: 1px black ridge;
 }
 
+@media only screen and (max-width: 1000px){
+  #advert{
+    display: none !important;
+  }
+  .wrapper{
+    display: block;
+  }
+  .job-container{
+    display: flex;
+    flex-direction: column;
+  }  
+  #logo img{
+    height: 20px ;
+  }
+/*  nav * {
+    font-size: 13px;
+    padding: 0 !important;
+    margin: 0px  2px 2px 2px !important;
+  }*/
+  footer h2{
+    font-size: 15px;
+  }
+  footer h3{
+    font-size: 10px;
+  }
+}

@@ -63,52 +63,7 @@ include_once("./db-connection/connection.php");
         </div>
       </div>
     </div>
-    
-    <!-- <footer>
-      <div id='footer-main'>
-        <div id='newsletter'>
-          <h2> Subscribe to our newsletter </h2>
-          <p>
-             We send information about new and exciting job offers once a week, we will not spam you, subscribe if you are interested
-          </p>
-          <form onsubmit="subscribe()" id='footer-form'>
-            <input type='email' placeholder='Enter your Email' id='newsletter_email'/>
-            <input type='submit' id='newsletter_email_button' value='Subscribe'></input>
-          </form>
 
-        </div>
-        <div id='footer-middle'>
-          <div id='social-media'>
-            <h2> Connect with us</h2>
-            <ul>
-              <li><a href='#'><img src="img/facebook.png" /> </a> </li>
-              <li><a href='#'><img src="img/whatsapp.png" /> </a></li>
-              <li><a href='#'><img src="img/linkedin.png" /> </a></li>
-              <li><a href='#'><img src="img/instagram.png" /> </a></li>
-              <li><a href='#'><img src="img/twitter.png" /> </a></li>
-            </ul>
-          </div>
-          <div id='copyright'>
-            <p>
-              &copy; 2020 Tapti Inc. All rights reserved.
-            </p>
-          </div>
-
-        </div>
-        <div id='designedby'>
-          <p> 
-             <h2> Designed By</h2>
-              Tapti Laboritories<br />
-              Tapti Hostel, <br />
-              Jawaharlal Nehru University, <br />
-              New Delhi 110067 
-          </p>
-          <span id='gototop'><a onclick = 'goToTop()'> Top &#8607 </a></span>
-        </div>
-      </div>
-		</footer> -->
-  <!-- </body>
-</html> -->
 <?php
 include("./includes/footer.php");
 ?>

@@ -5,7 +5,7 @@ header {
   width: 100%;
   height: 40px;
   overflow: visible;
-  background-color: #333;
+  background-color: #000; /*#333;*/
 }
 
 #logo {
@@ -24,7 +24,9 @@ header ul {
 
 header ul li {
   float: left;
+
 }
+
 
 header li a {
   display: block;
@@ -35,8 +37,9 @@ header li a {
 }
 
 header li a:hover {
-  background-color: #111;
+  background-color: white; /*#111;*/
   cursor: default;
+  color: #000;
 }
 
 #li-logo a:hover{

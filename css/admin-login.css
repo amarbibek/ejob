@@ -6,7 +6,9 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }*/
 
-
+#limiter{
+  overflow-x: hidden;
+}
 
 #limiter a {
   font-family: Georgia, "Times New Roman", Times, serif;

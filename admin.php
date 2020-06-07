@@ -6,7 +6,7 @@ check_admin_login();
 
 ?>
 
-  <?php
+<?php
     if(isset($_POST['add-job-btn'])){
       $job_title = $_POST['job-title'];
       $job_detail = $_POST['job-detail'];
@@ -46,12 +46,8 @@ check_admin_login();
              '</script>';
         }
       }
-  ?>
-  <!--   <div id='search-main'>
-      <input  type='text' id='search-input' name='search-input' placeholder='Searh jobs' />
-      <input  type='submit' id='search-btn' name='search-btn' value='Search' onclick='' />
-    </div>
- -->
+?>
+
  <?include("/includes/admin-sidemenu.css"); ?>
     <div class="admin-wrapper"> 
       <div class="admin-job-container"> 
@@ -104,7 +100,7 @@ check_admin_login();
             <textarea id='enter-job-details' name='job-detail' required> </textarea><br />
            
             <div id='add-tag'>
-            
+
                 <select name="category" id="category">
                   <option value='none'> Select Category</option>
                   <?php
@@ -112,45 +108,32 @@ check_admin_login();
                     $result = $conn->query($query);
                     if ($result->num_rows > 0) { 
                       while($row = $result->fetch_assoc()) {
-                      echo '<option value="'.$row['job_category_id'].'">'.$row['category'].'</option> ';
+                        echo '<option value="'.$row['job_category_id'].'">'.$row['category'].'</option> ';
                       }
                     }
-                    ?>
-                </select> 
-                <!-- <select name="category" id="category">
-                  <option value='none'> Select Category</option> -->
-                  <?php
-                    // $query="SELECT * FROM `job_category`";
-                    // $result = $conn->query($query);
-                    // if ($result->num_rows > 0) { 
-                    //   while($row = $result->fetch_assoc()) {
-                    //   echo '<option value="'.$row['job_category_id'].'">'.$row['category'].'</option> ';
-                    //   }
-                    // }
-                    ?>
-                <!-- </select>  -->
-                <select name="sub-category" id="sub-category">
-                  <!-- <option value='none'> Select Sub Category</option>
-                  <option value='experienced'>Experienced</option>
-                  <option value='fresher'>Fresher</option> -->
-                </select> 
-              <br />
-                
-                <!-- <select name='profession' id='profession'>
-                  <option value='none'>Select Profession</option>
-                  <option value='government'>Government</option>
-                  <option value='psu'>PSU</option>
-                  <option value='it'>IT</option>
-                  <option value='industrial'>Industrial</option>
-                </select> 
-              <br /> -->
+                  ?>
+                </select>
+
+              <?php
+                $arr = ["Post", "Qualification"];
+                for ($i= 1; $i < 3; $i++) {
+                  echo '<select name="category" id="category">';
+                  echo '<option value="none"> Select '. $arr[$i-1]. '</option>';
               
-                <!-- <select name='post' id='post'>
-                  <option value='none'> Select Post</option>
-                  <option value='clerk'>Clerk</option>
-                  <option value='po'>PO</option>
-                  <option value='administration'>Administration</option>
-                </select>  -->
+                  $query="SELECT * FROM `job_sub_category`";
+                  $result = $conn->query($query);
+                  if ($result->num_rows > 0) { 
+                    while($row = $result->fetch_assoc()) {
+                      if($row['job_category_id'] == $i) {
+                        echo '<option value="'.$row['job_category_id'].'">'.$row['sub_category'].'</option> ';
+                      }
+                    }
+                  }
+                  
+                  echo '</select>';
+                }
+              ?>
+          
             </div>
 
             <div id='upload-file'>

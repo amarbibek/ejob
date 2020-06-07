@@ -7,11 +7,10 @@
 <div id="sidebar-wrapper">
 
     <ul class="sidebar-nav1"> 
-        <li><a href="requests.php">REQUESTS</a></li>
-        <li><a href="add_admin.php">ADD ADMIN</a></li>
-        <li><a href="view_users.php">VIEW USERS</a></li>
-        <li><a href="view_all_cargos.php">CARGOS</a></li>
-        <li><a href="view_feedbacks.php">FEEDBACKS</a></li>
+        <li><a href="admin.php?page_no=1">Admin Home</a></li> 
+        <li><a href="view_users.php">USERS</a></li>
+        <li><a href="view_categories.php">Categories</a></li>
+        <!-- <li><a href="view_feedbacks.php">FEEDBACKS</a></li> -->
     </ul>
 </div>
 </div>

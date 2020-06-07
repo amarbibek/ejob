@@ -1,9 +1,3 @@
-<!-- 
-TODO:
-1.    display all jobs in tabular format and add last column with header "Actions",
-2.    this column should contain two links edit,delete 
-3.    edit and delete code I'll do
--->
 <?php
 include("./includes/header.php");
 include_once("./db-connection/connection.php");
@@ -221,7 +215,7 @@ $("#category").on("change",function(){
      setTimeout(function() {  
         $("#sub-category").val(sub_cat_id);
     }, 300);
-    debugger;
+    // debugger;
     $("#file").val($data[5]);
   }); 
   }

@@ -39,4 +39,49 @@ app = {
       $(job_container).val("").html(searchedJobsHtml);
     });
   },
+  insertCategory: function (selectedCategoryId, catName) {
+    $.ajax({
+      method: "GET",
+      url:
+        "includes/insertCategory.php?selectedCategoryId=" +
+        selectedCategoryId +
+        "&catName=" +
+        catName,
+      // data: { searchKey: searchKey },
+    }).done(function (msg) {
+      // debugger;
+      if (msg === "success") {
+        $.toast({
+          heading: "Added",
+          text: "Category has been deleted!",
+          position: "top-right",
+          icon: "success",
+          stack: true,
+        });
+        location.reload();
+      }
+    });
+  },
+  insertSubCategory: function (selectedCategoryId, subCatName) {
+    $.ajax({
+      method: "GET",
+      url:
+        "includes/insertSubCategory.php?selectedCategoryId=" +
+        selectedCategoryId +
+        "&subCatName=" +
+        subCatName,
+    }).done(function (msg) {
+      // debugger;
+      if (msg === "success") {
+        $.toast({
+          heading: "Added",
+          text: "Sub Category has been deleted!",
+          position: "top-right",
+          icon: "success",
+          stack: true,
+        });
+        location.reload();
+      }
+    });
+  },
 };

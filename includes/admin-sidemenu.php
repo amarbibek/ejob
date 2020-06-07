@@ -1,10 +1,8 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="requests.php">REQUESTS</a>
-    <a href="add_admin.php">ADD ADMIN</a>
-    <a href="view_users.php">VIEW USERS</a>
-    <a href="view_all_cargos.php">CARGOS</a>
-    <a href="view_feedbacks.php">FEEDBACKS</a>
+	<a href="admin.php?page_no=1">Admin Home</a>
+    <a href="view_users.php">USERS</a>
+    <a href="view_categories.php">Categories</a> 
 </div>
 
 

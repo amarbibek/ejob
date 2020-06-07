@@ -90,22 +90,17 @@ error_reporting(0);
 				}
 				$(function(){
 					$(".dropbtn").hover(function(){
-						$hovered_ele =$(this);
-						// console.log($hovered_ele.text());
-						$cat_id=$(this).data("cat_id");
-						// debugger;
+						$hovered_ele =$(this); 
+						$cat_id=$(this).data("cat_id"); 
 						$.get("./includes/get_sub_category.php",{cat_id:$cat_id},function(htmldata){
-							$data=htmldata.split("<br/>"); 
-							// $anchor=$hovered_ele.text()+'<div class="dropdown-content">';
-							$anchor="";//$hovered_ele.text(); //+'<div class="dropdown-content">';
+							$data=htmldata.split("<br/>");  
+							$anchor="";
 							$.each($data, function(i,v){
 								if(v !== ""){
 									$anchor +='<a href="category_jobs.php?category='+ v.split("-")[0] +'&page_no=1">'+v.split("-")[1]+'</a>';
 								}
 							});
-							$anchor += '</div>'
-							//  $hovered_ele.html($anchor);
-							//  $hovered_ele.after($anchor);
+							$anchor += '</div>';
 							 $($hovered_ele).parent().find(".dropdown-content").val("").html($anchor);
 
 						});

@@ -46,11 +46,11 @@ include_once("./db-connection/connection.php");
               <span class="focus-input"></span>
             </div>
             
-            <div id='forgot'>
+            <!-- <div id='forgot'>
                 <a href="#" >
                   Forgot ?
                 </a>
-            </div>
+            </div> -->
 
             <div id='login' >
               <!-- <button id='login-btn'>

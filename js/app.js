@@ -1,11 +1,4 @@
 app = {
-  //   printHello: function () {
-  //     // echo("Hello");
-  //     return "Hello";
-  //   },
-  //   printHello: function (name) {
-  //     return name + "Hello";
-  //   },
   searchJobs: function (searchKey) {
     $.ajax({
       method: "GET",

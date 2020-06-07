@@ -42,7 +42,7 @@ error_reporting(0);
 		<header>
 			<nav> 
 				<ul id='navigation'>
-					<li id="li-logo">	<span><a href="index.php"><img id="logo" src="img/logo1.png"/></a>	</span></li>
+					<li id="li-logo">	<span><a href="index.php" title="ejob"><img id="logo" src="img/logo1.png"/></a>	</span></li>
 					<?php
 						$query="SELECT * FROM `job_category`";
 						$result = $conn->query($query);

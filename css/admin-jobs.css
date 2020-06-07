@@ -53,3 +53,12 @@
   border: 1px black ridge;
 }
 */
+
+@media only screen and (max-width: 1000px){
+  #job-entry{
+    display: none !important;
+  }
+  .admin-wrapper{
+    display: block;
+  }
+}

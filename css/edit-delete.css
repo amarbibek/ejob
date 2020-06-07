@@ -144,9 +144,9 @@ select {
 }
 
 [type="file"] + label {
-  background-color: #2e1435;
-  /* border-radius: 4rem; */
-  color: #fff;
+  background-color: #fff;
+  border-radius: 4rem; 
+  color: ##2e1435;
   cursor: pointer;
   display: inline-block;
   font-family: "Poppins", sans-serif;
@@ -156,14 +156,14 @@ select {
   line-height: 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  border: 1px solid #2e1435;
   transition: background-color 0.3s;
 }
 
 [type="file"]:focus + label,
 [type="file"] + label:hover {
-  background-color: #fff;
-  color: #2e1435;
+  background-color: #2e1435 ;
+  color: #fff;
   transition-duration: 0.9s;
-  border: 1px solid #2e1435;
   font-weight: bolder;
 }

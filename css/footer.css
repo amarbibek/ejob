@@ -1,9 +1,9 @@
 footer {
-  background-color: black;
-  opacity: 0.6;
+  background-color: #000;/*black*/
+  /*opacity: 0.6;*/
   color: whitesmoke;
   font-family: 20px, "Courier New", Courier, monospace;
-  width: 100%;
+  width: 100% !important;
   /* height: 150px; */
   border-top: 1px solid black;
   margin-top: 30px;
@@ -116,7 +116,7 @@ footer span a {
   font-family: sans-serif;
   font-size: 20px;
   font-weight: bolder;
-  color: #2196f3;
+  color: #000;
 }
 
 #gototop:hover {
@@ -124,14 +124,14 @@ footer span a {
 
 }
 
-@media (max-width: 1000px){
+@media only screen and (max-width: 1000px){
   footer img{
     height: 25px;
     width: 25px;
   }
 }
 
-@media (max-width: 1000px){
+@media only screen and (max-width: 1000px){
   #newsletter_email_button,#newsletter_email {
   font-size: 12px;
   }

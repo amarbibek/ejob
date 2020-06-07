@@ -1,18 +1,3 @@
-function openNav() {
-  document.getElementById("mySidenav").style.width = "200px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-function openLogin() {
-  document.getElementById("mySidenav").style.width = "200px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.body.style.backgroundColor = "white";
-}
-
-
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -33,4 +18,20 @@ function scrollFunction() {
 
 function goToTop() {
 	document.documentElement.scrollTop = 0;
+}
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("admin-wrapper").style.marginRight = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  document.getElementById("three-lines").style.display = "none";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("admin-wrapper").style.marginRight = "0";
+  document.body.style.backgroundColor = "white";
+    document.getElementById("three-lines").style.display = "block";
+
 }

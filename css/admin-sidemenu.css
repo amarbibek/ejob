@@ -4,11 +4,11 @@
   position: fixed;
   z-index: 1;
   top: 0;
-  right: -1%;
+  right: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 60px;
   transition: 0.5s;
+  padding-top: 60px;
 }
 
 .sidenav a {
@@ -27,26 +27,15 @@
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 25px;
   font-size: 36px;
+  margin-left: 50px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+
 @media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
-#notification,
-#login-link {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  color: white;
-  cursor: pointer;
-  font-family: inherit;
-}

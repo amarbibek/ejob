@@ -27,6 +27,8 @@ error_reporting(0);
 	<link href="./css/about.css" rel="stylesheet" type="text/css" />
 	<link href="./css/contact.css" rel="stylesheet" type="text/css" />
 
+	<link href="./css/admin-sidemenu.css" rel="stylesheet" type="text/css" />
+
 	
 
 	<!-- <link rel="stylesheet" href="./css/sidebar.css"> -->

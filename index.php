@@ -37,28 +37,6 @@ include("./includes/search.php");
 	</div>
 </div>
 
-<!-- TODO: remove side panel and make modal insted for login -->
-<!-- I've written login code below if login fails then reain form else redirect -->
-<?php
-	include("./includes/pagination.php");
-	?>
-
-
-<?php
-// if(isset($_POST['login'])){
-	// 	$username=$_POST['username'];
-	// 	$password=$_POST['password'];
-	// 	$query="SELECT * FROM `users` WHERE `username` = $username AND `password`=$password";
-	// 	$result = $conn->query($query);
-	// 	if ($result->num_rows > 0) { 
-		// 		echo "Login Successful!";
-		// 		header("location:admin.php");
-		// 	}
-		// }
-		
-		?>
-
-
 <?php
 include("./includes/footer.php");
 ?>

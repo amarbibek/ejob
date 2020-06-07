@@ -3,7 +3,6 @@ TODO:
 1.    display all jobs in tabular format and add last column with header "Actions",
 2.    this column should contain two links edit,delete 
 3.    edit and delete code I'll do
-4. wtf is this jgbhjbjhnjnhjbhghghghbgjbh
 -->
 <?php
 include("./includes/header.php");
@@ -59,6 +58,7 @@ check_admin_login();
       <input  type='submit' id='search-btn' name='search-btn' value='Search' onclick='' />
     </div>
  -->
+ <?include("/includes/admin-sidemenu.css"); ?>
     <div class="admin-wrapper"> 
       <div class="admin-job-container"> 
         <?php
@@ -97,8 +97,10 @@ check_admin_login();
       			}
         ?>
       </div>
+
       <div id='job-entry'>
           <form id='add-job' action="#" method="POST" enctype="multipart/form-data">
+            <span style="font-size:50px;font-weight:bolder;float:right;margin-right:34px;margin-top:3px;cursor:pointer;" onclick="openNav()">&#8801;</span>
             <h2> Enter New Job Here </h2>
             <label id='label-job-title' name='label-job-title'> Job Title: </label> <br />
             <!-- <textarea name='enter-job-title' id='enter-job-title' autofocus> </textarea><br /> -->
@@ -166,19 +168,18 @@ check_admin_login();
               <input type='submit' name='add-job-btn' class='add-job-btn' value='Add'/> 
             </div>
           </form>
+          
         </div>
       </div>
 
 
+<div id='pagination'>
+    <a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1;?>"> <span class="arrow">&#171;</span><span class='prev-next'>Previous</span></a>
 
-<?php
-  // include("./includes/pagination.php");
-?> 
-      <div id='pagination'>
-        <a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1; ?>"><< Previous</a>
-        <a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>">Next >></a>
-    </div>
+    <a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>"><span class='prev-next'>Next</span> <span class="arrow">&#187;</span></a>
+</div>
 
+<?php include("./includes/admin-sidemenu.php"); ?>
 
 <script>
 var sub_cat_id=0;

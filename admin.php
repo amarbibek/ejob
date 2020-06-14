@@ -87,8 +87,12 @@ check_admin_login();
       			}
         ?>
       </div>
-
       </div>
+      <hr>
+    <ul class="pagination text-center" role="navigation">
+      <li><a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1;?>"> <i class="fas fa-arrow-circle-left"></i><span class='prev-next' > Previous</span></a></li>
+      <li><a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>"><span class='prev-next'>Next </span> <i class="fas fa-arrow-circle-right"></i></a></li>
+    </ul>
 
  	<!-- <div class= "grid-x grid-padding-x grid-padding-y job-container" >
         <?php

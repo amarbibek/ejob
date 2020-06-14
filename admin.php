@@ -48,7 +48,49 @@ check_admin_login();
       }
 ?>
 
- 	<div class= "grid-x grid-padding-x grid-padding-y job-container" >
+<?include("/includes/admin-sidemenu.css"); ?>
+    <div class="admin-wrapper">
+      <div class="admin-job-container">
+        <?php
+
+          $initial_page_no=$_GET['page_no'];
+          $page_no=(($initial_page_no-1)*10);
+
+          $query="SELECT * FROM `jobs` WHERE `is_visible`=1 LIMIT 20 OFFSET $page_no";
+      		$result = $conn->query($query);
+
+      			if ($result->num_rows > 0) {
+      			while($row = $result->fetch_assoc()) {
+
+              echo '<div class="admin-jobs" >';
+              echo '  <div class="admin-job-title">';
+              if($row['pdf_url']!=NULL){
+                echo '<div class="admin-job-pdf"><a href="'.$row["pdf_url"].'" target="_blank">&#10247;</a></div>';
+              }
+              echo '    <a href="#">'. $row["institute"].'</a>';
+              echo '  </div>';
+              echo '  <div class="admin-job-details">';
+              echo '    '. $row["job_description"].'';
+              echo '  </div>';
+
+              echo '  <div class="edit-delete">';
+              echo '    <button name="edit" class="edit-button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';
+              echo '    <button name="delete" class="delete-button" data-job_id="'.$row['job_id'].'" onclick="delete_job(this)">';
+              echo '      Delete';
+              echo '    </button>';
+              echo '  </div>';
+              echo '</div>';
+
+      			}
+      			} else {
+      			echo "0 results";
+      			}
+        ?>
+      </div>
+
+      </div>
+
+ 	<!-- <div class= "grid-x grid-padding-x grid-padding-y job-container" >
         <?php
 
           $initial_page_no=$_GET['page_no'];
@@ -61,7 +103,7 @@ check_admin_login();
       			while($row = $result->fetch_assoc()) {
 
               echo '<div class="cell large-3 small-12 medium-6 grid-y grid-margin-y  grid-padding-y admin-jobs" >';
-              echo '  <div class="cell large-2 small-2 medium-4 grid-x admin-job-title">';
+              echo '  <div class="cell large-4 small-4 medium-4 grid-x admin-job-title">';
               echo '  <div class="cell large-11 small-10 medium-10"><a href="#">'. $row["institute"].'</a></div>';
               if($row['pdf_url']!=NULL){
                 echo '<div class="cell large-1 small-2 medium-2 text-right admin-job-pdf"><a href="'.$row["pdf_url"].'" target="_blank">&#10247;</a></div>';
@@ -71,12 +113,12 @@ check_admin_login();
               echo '    '. $row["job_description"].'';
               echo '  </div>';
 
-              echo '  <div class="cell large-4 small-4 medium-4  grid-x edit-delete">';
-              echo '    <div class="cell large-6 medium-6 small-6">';
-              echo '      <button name="edit" class="small primary button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';
+              echo '  <div class="cell large-2 small-2 medium-4  grid-x edit-delete">';
+              echo '    <div class="cell large-6 medium-6 small-6 text-left">';
+              echo '      <button name="edit" class="large primary button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';
               echo '    </div>';
               echo '    <div class="cell large-6 medium-6 small-6 text-right">';
-              echo '      <button name="delete" class="small alert button" data-job_id="'.$row['job_id'].'" onclick="delete_job(this)">Delete</button>';
+              echo '      <button name="delete" class="large alert button" data-job_id="'.$row['job_id'].'" onclick="delete_job(this)">Delete</button>';
               echo '    </div>';
               echo '  </div>';
               echo '</div>';
@@ -89,11 +131,11 @@ check_admin_login();
       </div>
 
 
-
+      <hr>
     <ul class="pagination text-center" role="navigation">
       <li><a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1;?>"> <i class="fas fa-arrow-circle-left"></i><span class='prev-next' > Previous</span></a></li>
       <li><a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>"><span class='prev-next'>Next </span> <i class="fas fa-arrow-circle-right"></i></a></li>
-    </ul>
+    </ul> -->
 
 
 

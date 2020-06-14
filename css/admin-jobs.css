@@ -96,7 +96,7 @@
   .admin-job-container {
     display: grid;
     justify-content: space-around;
-    grid-template-columns: 100%;
+    grid-template-columns: 80%;
     grid-row-gap: 20px;
   }
 }

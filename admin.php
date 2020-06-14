@@ -17,7 +17,7 @@ check_admin_login();
     $fileName = basename($_FILES["file"]["name"]);
     $targetFilePath = $targetDir . $fileName;
     $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-    
+
 
     if(isset($_POST["add-job-btn"]) && !empty($_FILES["file"]["name"])) {
         //allow certain file formats
@@ -37,7 +37,7 @@ check_admin_login();
     }
 
     $url = $targetDir . $fileName;
- 
+
     $query="INSERT INTO `jobs` (`institute`,`job_description`,`job_sub_category_id`,`pdf_url`,`is_visible`,`created_by`) VALUES ('$job_title','$job_detail','$sub_category','$url',1,2)";
 
     if($conn->query($query) === TRUE){
@@ -48,39 +48,39 @@ check_admin_login();
       }
 ?>
 
- <?include("/includes/admin-sidemenu.css"); ?>
-    <div class="admin-wrapper"> 
-      <div class="admin-job-container"> 
+ 	<div class= "grid-x grid-padding-x grid-padding-y job-container" >
         <?php
-       
-          $initial_page_no=$_GET['page_no']; 
+
+          $initial_page_no=$_GET['page_no'];
           $page_no=(($initial_page_no-1)*10);
-       
-          $query="SELECT * FROM `jobs` WHERE `is_visible`=1 LIMIT 18 OFFSET $page_no";
+
+          $query="SELECT * FROM `jobs` WHERE `is_visible`=1 LIMIT 20 OFFSET $page_no";
       		$result = $conn->query($query);
 
-      			if ($result->num_rows > 0) { 
+      			if ($result->num_rows > 0) {
       			while($row = $result->fetch_assoc()) {
-      		
-              echo '<div class="admin-jobs" >';
-              echo '  <div class="admin-job-title">';
+
+              echo '<div class="cell large-3 small-12 medium-6 grid-y grid-margin-y  grid-padding-y admin-jobs" >';
+              echo '  <div class="cell large-2 small-2 medium-4 grid-x admin-job-title">';
+              echo '  <div class="cell large-11 small-10 medium-10"><a href="#">'. $row["institute"].'</a></div>';
               if($row['pdf_url']!=NULL){
-                echo '<div class="admin-job-pdf"><a href="'.$row["pdf_url"].'" target="_blank">&#10247;</a></div>';
+                echo '<div class="cell large-1 small-2 medium-2 text-right admin-job-pdf"><a href="'.$row["pdf_url"].'" target="_blank">&#10247;</a></div>';
               }
-              echo '    <a href="#">'. $row["institute"].'</a>';
               echo '  </div>';
-              echo '  <div class="admin-job-details">';
+              echo '  <div class="cell large-6 small-6 medium-4 admin-job-details">';
               echo '    '. $row["job_description"].'';
               echo '  </div>';
-             
-              echo '  <div class="edit-delete">';
-              echo '    <button name="edit" class="edit-button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';
-              echo '    <button name="delete" class="delete-button" data-job_id="'.$row['job_id'].'" onclick="delete_job(this)">';
-              echo '      Delete';
-              echo '    </button>';
+
+              echo '  <div class="cell large-4 small-4 medium-4  grid-x edit-delete">';
+              echo '    <div class="cell large-6 medium-6 small-6">';
+              echo '      <button name="edit" class="small primary button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';
+              echo '    </div>';
+              echo '    <div class="cell large-6 medium-6 small-6 text-right">';
+              echo '      <button name="delete" class="small alert button" data-job_id="'.$row['job_id'].'" onclick="delete_job(this)">Delete</button>';
+              echo '    </div>';
               echo '  </div>';
               echo '</div>';
-              
+
       			}
       			} else {
       			echo "0 results";
@@ -88,75 +88,14 @@ check_admin_login();
         ?>
       </div>
 
-      <div id='job-entry'>
-          <form id='add-job' action="#" method="POST" enctype="multipart/form-data">
-            <span style="font-size:50px;font-weight:bolder;float:right;margin-right:34px;margin-top:3px;cursor:pointer;" onclick="openNav()">&#8801;</span>
-            <h2> Enter New Job Here </h2>
-            <label id='label-job-title' name='label-job-title'> Job Title: </label> <br />
-            <!-- <textarea name='enter-job-title' id='enter-job-title' autofocus> </textarea><br /> -->
-            <textarea name='job-title' id='enter-job-title' required> </textarea><br />
-            <label id='label-job-details' name='label-job-details'> Job Details: </label><br />
-            <!-- <textarea id='enter-job-details' name='enter-job-detail'> </textarea><br /> -->
-            <textarea id='enter-job-details' name='job-detail' required> </textarea><br />
-           
-            <div id='add-tag'>
-
-                <select name="category" id="category">
-                  <option value='none'> Select Category</option>
-                  <?php
-                    $query="SELECT * FROM `job_category`";
-                    $result = $conn->query($query);
-                    if ($result->num_rows > 0) { 
-                      while($row = $result->fetch_assoc()) {
-                        echo '<option value="'.$row['job_category_id'].'">'.$row['category'].'</option> ';
-                      }
-                    }
-                  ?>
-                </select>
-
-              <?php
-                $arr = ["Post", "Qualification"];
-                for ($i= 1; $i < 3; $i++) {
-                  echo '<select name="category" id="category">';
-                  echo '<option value="none"> Select '. $arr[$i-1]. '</option>';
-              
-                  $query="SELECT * FROM `job_sub_category`";
-                  $result = $conn->query($query);
-                  if ($result->num_rows > 0) { 
-                    while($row = $result->fetch_assoc()) {
-                      if($row['job_category_id'] == $i) {
-                        echo '<option value="'.$row['job_category_id'].'">'.$row['sub_category'].'</option> ';
-                      }
-                    }
-                  }
-                  
-                  echo '</select>';
-                }
-              ?>
-          
-            </div>
-
-            <div id='upload-file'>
-              <h2> Upload List of jobs </h2>
-              <input type='file' id='file' name='file'> <label for='file'>Choose File</label>
-              <!-- <input type='submit' id='submit' value='Upload' class='add-job-btn' onclick='' style='margin-top: 20px; background-color: black; color: #fff'/>  -->
-            </div>
-            <div id='buttons'>
-              <input type='submit' name='add-job-btn' class='add-job-btn' value='Add'/> 
-            </div>
-          </form>
-          
-        </div>
-      </div>
 
 
-<div id='pagination'>
-    <a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1;?>"> <span class="arrow">&#171;</span><span class='prev-next'>Previous</span></a>
+    <ul class="pagination text-center" role="navigation">
+      <li><a id='page-prev' href="admin.php?page_no=<?php echo $initial_page_no-1;?>"> <i class="fas fa-arrow-circle-left"></i><span class='prev-next' > Previous</span></a></li>
+      <li><a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>"><span class='prev-next'>Next </span> <i class="fas fa-arrow-circle-right"></i></a></li>
+    </ul>
 
-    <a id='page-next' href="admin.php?&page_no=<?php echo $initial_page_no+1; ?>"><span class='prev-next'>Next</span> <span class="arrow">&#187;</span></a>
-</div>
 
-<?php include("./includes/admin-sidemenu.php"); ?>
 
 <script>
 var sub_cat_id=0;
@@ -164,22 +103,18 @@ $(function(){
 $("#category").on("change",function(){
   $hovered_ele =$("#sub-category");
   var selectedCategory = $(this). children("option:selected"). val();
-  // debugger;
+
   $.get("./includes/get_sub_category.php",{cat_id:selectedCategory},function(htmldata){
-    // debugger;
-    $data=htmldata.split("<br/>"); 
-    // $anchor=$hovered_ele.text()+'<div class="dropdown-content">';
-    $anchor="<option value='none'> Select Sub-Category</option>";//$hovered_ele.text(); //+'<div class="dropdown-content">';
+
+    $data=htmldata.split("<br/>");
+    $anchor="<option value='none'> Select Sub-Category</option>";
     $.each($data, function(i,v){
       if(v !== ""){
         $anchor +='<option value="'+ v.split("-")[0] + '">'+ v.split("-")[1]+ '</option> ';
       }
     });
-    // $anchor += '</div>'
+
      $hovered_ele.html($anchor);
-    //  alert("a");
-    //  $hovered_ele.after($anchor);
-      // $($hovered_ele).parent().find(".dropdown-content").val("").html($anchor);
 
   });
   });
@@ -187,26 +122,22 @@ $("#category").on("change",function(){
 });
   function edit_job(e){
     $job_id = $(e).data("job_id");
-    // alert(sub_cat_id);
-    $.get("./includes/get-job-by-id.php",{job_id:$job_id},function(retdata){ 
-      $data=retdata.split("<br/>"); 
-      // debugger;  
+    $.get("./includes/get-job-by-id.php",{job_id:$job_id},function(retdata){
+      $data=retdata.split("<br/>");
     $("#enter-job-title").val($data[1]);
     $("#enter-job-details").val($data[2]);
     sub_cat_id = $data[4];
-    $("#category").val($data[3]).trigger('change'); 
-     setTimeout(function() {  
+    $("#category").val($data[3]).trigger('change');
+     setTimeout(function() {
         $("#sub-category").val(sub_cat_id);
     }, 300);
-    // debugger;
     $("#file").val($data[5]);
-  }); 
+  });
   }
   function delete_job(e){
-    $job_id = $(e).data("job_id"); 
-    $.get("./includes/delete-job.php",{job_id:$job_id},function(retdata){ 
+    $job_id = $(e).data("job_id");
+    $.get("./includes/delete-job.php",{job_id:$job_id},function(retdata){
       if(retdata==="deleted"){
-        // https://kamranahmed.info/toast
         $.toast({
             heading: 'Deleted',
             text: 'Job has been deleted!',
@@ -216,7 +147,7 @@ $("#category").on("change",function(){
         });
         location.reload();
       }
-  }); 
+  });
 }
 
 

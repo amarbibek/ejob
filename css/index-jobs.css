@@ -1,23 +1,5 @@
-.wrapper {
-  width: 100%;
-  margin-top: 2.2%;
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: 70% 25%;
-}
-.job-container a {
+.job-title a,.job-detail a {
   text-decoration: none;
-}
-
-.job-container {
-  display: grid;
-  justify-content: space-around;
-  grid-template-columns: 30% 30% 30%;
-  grid-row-gap: 20px;
-}
-
-.jobs {
-  padding: 2%;
 }
 
 .job-title a{
@@ -30,8 +12,8 @@
   color: #2196f3;
 }
 .job-details a{
-  font-family: serif; 
-  font-size: 16px;  
+  font-family: serif;
+  font-size: 16px;
   color:  #101010;
 }
 .job-details a:visited{
@@ -41,37 +23,4 @@
 .job-pdf{
   float: right;
   color: #2e1435;
-}
-
-
-/*--------------------------------------For development only------------------------------------------------*/
-.jobs:hover{
-  border: 1px black ridge;
-}
-
-@media only screen and (max-width: 1000px){
-  #advert{
-    display: none !important;
-  }
-  .wrapper{
-    display: block;
-  }
-  .job-container{
-    display: flex;
-    flex-direction: column;
-  }  
-  #logo img{
-    height: 20px ;
-  }
-/*  nav * {
-    font-size: 13px;
-    padding: 0 !important;
-    margin: 0px  2px 2px 2px !important;
-  }*/
-  footer h2{
-    font-size: 15px;
-  }
-  footer h3{
-    font-size: 10px;
-  }
 }

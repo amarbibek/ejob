@@ -1,57 +1,9 @@
 footer {
-  background-color: #000;/*black*/
-  /*opacity: 0.6;*/
+  width: 100%;
+  background-color: rgb(0,0,0,0.9);
   color: whitesmoke;
   font-family: 20px, "Courier New", Courier, monospace;
-  width: 100% !important;
-  /* height: 150px; */
-  border-top: 1px solid black;
-  margin-top: 30px;
-  text-align: center;
   font-weight: 5px;
-  /* position: inherit;
-  bottom: -1px; */
-}
-
-footer h2{
-  color: #2196f3;
-}
-
-footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-footer ul li {
-  float: left;
-}
-
-footer li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-footer li a:hover {
-  background-color: #111;
-}
-
-#footer-main {
-  display: grid;
-  justify-content: space-around;
-  grid-template-columns: 26% 42% 26%;
-  grid-row-gap: 20px;
-}
-
-#footer-middle {
-  display: grid;
-  justify-content: space-around;
-  grid-template-rows: 60% 20%;
-  grid-row-gap: 20px;
 }
 
 footer img {
@@ -60,32 +12,24 @@ footer img {
   height: 40px;
 }
 
-#newsletter{
-  margin-bottom: 16px;
+footer ul a:hover{
+  border-radius: 5%;
+  background-color: rgb(23,121,186,.1);
+}
+footer h2{
+  color: #2196f3; 
+  font-size: min(4vh,4vw);
+  font-family: "Times New Roman", Times, serif;
+  padding-top: 10px;
+  font-weight: bolder;
 }
 
-
-#newsletter_email_button,
-#newsletter_email {
-  width: inherit;
-  height: 30px;
+footer ul a:hover{
+  background-color: rgb(23,121,186,.1);
 }
-
-/*#newsletter_email:hover,#newsletter_email:focus{
-  border: 1px solid #0b7dda;
-}*/
-
 #newsletter_email_button {
-  border: none;
   color: white;
-  cursor: pointer;
   background-color: #2196f3;
-  height: 36px;
-  font-size: 20px;
-}
-
-footer input:focus {
-  outline: none !important;
 }
 
 #newsletter_email_button:hover {
@@ -94,45 +38,17 @@ footer input:focus {
   border: 1px solid #0b7dda;
 }
 
-#footer-form {
-  display: grid;
-  justify-content: space-around;
-  grid-template-columns: 55% 45%;
-}
-
-footer span a {
-  text-decoration: none;
-  font-family: 50px, Arial, Helvetica, sans-serif;
-  color: gainsboro;
-  font-size: 30px;
-}
-
-
 #gototop{
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1vh;
+  right: 1vh;
   font-family: sans-serif;
   font-size: 20px;
   font-weight: bolder;
-  color: #000;
+  color: #4caf50;
 }
 
 #gototop:hover {
   cursor: pointer;
-
-}
-
-@media only screen and (max-width: 1000px){
-  footer img{
-    height: 25px;
-    width: 25px;
-  }
-}
-
-@media only screen and (max-width: 1000px){
-  #newsletter_email_button,#newsletter_email {
-  font-size: 12px;
-  }
 }

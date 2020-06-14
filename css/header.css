@@ -1,79 +1,32 @@
-header {
-  font-size: 20px;
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-  height: 40px;
-  overflow: visible;
-  background-color: #000; /*#333;*/
-}
-
-#logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 40px;
-}
-
-header ul {
-  list-style-type: none;
+header img{
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  width:: 35px;
+  height: 35px;
+}
+.logo{
+  position:absolute;
+  top: 10px;
+  left: 10px
 }
 
-header ul li {
-  float: left;
-
+.main-nav {
+  background-color: black;
+  color: whitesmoke;
 }
 
-
-header li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.nav-left, .nav-right{
+  background-color: black;
 }
 
-header li a:hover {
-  background-color: white; /*#111;*/
-  cursor: default;
-  color: #000;
+.nav-left ul{
+  background-color: black;
 }
 
-#li-logo a:hover{
-  background-color: white;
-
+.main-nav ul{
+  border: none
 }
 
-#logout-btn{
-  float: right;
-  margin-right: 20px;
-  margin-top: 12px;
-}
-#logout-btn a{
-  float: right;
-  padding: 0;
-  margin: 0;
-  font-size: 20px;
-  color: #fff;
-  /*border: 1px solid #fff;*/
-}
-
-#logout-btn a:hover{
-  background-color: inherit;
-}
-
-/*@media only screen and (max-width: 400px) {
-  header{
-    overflow: hidden;
-  }
-
-}*/
-
-@media only screen and (max-width: 1000px) {
-  header .anchor-header{
-    visibility: hidden;
-  }
+.nav-right .menu{
+  background-color: black;
 }

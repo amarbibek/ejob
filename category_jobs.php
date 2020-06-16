@@ -22,6 +22,8 @@
             echo '<div class="job-details"><a href="#">'. $row["job_description"].'</a></div>';
             echo '<div class="job-details"><a href="#">'."Apply By : ". $row["time"].'</a></div>';
             echo '<div class="job-details"><a href="#">'."Created Date : ". $row["created_date"].'</a></div>';
+			echo '<div class="job-detailsss"><a href="'. $row["website"].'" target="_blank"> Apply Here </a></div>';
+
 
             echo '</div>';
         }

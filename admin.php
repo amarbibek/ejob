@@ -32,6 +32,14 @@ check_admin_login();
               echo '  <div class="admin-job-details">';
               echo '    '. $row["job_description"].'';
               echo '  </div>';
+              echo '  <div class="admin-job-details">';
+              echo '   Apply By : '. $row["time"].'';
+              echo '  </div>';
+              echo '  <div class="admin-job-details">';
+              echo '   Created Date : '. $row["created_date"].'';
+              echo '  </div>';
+    					echo '<div class="job-detailsss"><a href="'. $row["website"].'" target="_blank"> Apply Here </a></div>';
+
 
               echo '  <div class="edit-delete">';
               echo '    <button name="edit" class="edit-button" data-job_id="'.$row['job_id'].'" onclick="edit_job(this)">Edit</button>';

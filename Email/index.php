@@ -1,27 +1,6 @@
 <?php
 include_once("../db-connection/connection.php"); 
-require 'PHPMailerAutoload.php';
-
-		// $mysql_hostname = 'Database Host';
-		// $mysql_username = 'Database Username';
-		// $mysql_password = 'Database Password';
-		// $mysql_dbname = 'Database Name';
-		
-		// $dbh = new PDO("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password);
-        // /*** $message = a message saying we have connected ***/
-
-        // /*** set the error mode to excptions ***/
-        // $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        // /*** prepare the select statement ***/
-        //  $stmt = $dbh->prepare("SELECT id, name, email, promocode FROM email");
-
-        // /*** execute the prepared statement ***/
-		// $stmt->execute();
-		
-
-		 
-	// function sendEmail($email){
+require 'PHPMailerAutoload.php'; 
 
 		$mail = new PHPMailer;
 
@@ -41,11 +20,13 @@ require 'PHPMailerAutoload.php';
 		// add email list
 		$query="SELECT * FROM `emaillist`";
 		$result = $conn->query($query);
+		$count=0;
 		if ($result->num_rows > 0) { 
 			while($row = $result->fetch_assoc()) { 
 				$email = $row['email']; 
 				// echo $email;					  
 				// sendEmail($email);
+				$count++;
 				$mail->addAddress($email);
 			
 			}
@@ -68,7 +49,7 @@ require 'PHPMailerAutoload.php';
 			echo 'Message could not be sent.';
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 	} else {
-		echo 'Message has been sent to Email:  '.$email.'<br><br>';
+		echo 'Message has been sent to '.$count.' emails <br><br>';
 	}
 // }
 ?>

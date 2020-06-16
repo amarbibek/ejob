@@ -23,8 +23,8 @@
               </select>
 
             <?php
-              $arr = ["Post", "Qualification"];
-              for ($i= 1; $i < 3; $i++) {
+              // $arr = ["Post", "Qualification"];
+              // for ($i= 1; $i < 3; $i++) {
                 echo '<select name="category" id="category">';
                 echo '<option value="none"> Select '. $arr[$i-1]. '</option>';
                 $query="SELECT * FROM `job_sub_category`";
@@ -37,7 +37,7 @@
                   }
                 }
                 echo '</select>';
-              }
+              // }
             ?>
           </div>
           <div class="grid-x">

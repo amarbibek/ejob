@@ -3,9 +3,7 @@ include("./includes/header.php");
 include_once("./db-connection/connection.php");
 include("./filters/functions.php");
 check_admin_login();
-?>
-
-
+?> 
     <hr>
     <div class="grid-x align-center grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
       <div class="cell small-12 medium-6 large-4 align-center" id='job-entry'>
@@ -25,9 +23,9 @@ check_admin_login();
                     ?>
                 </select>
               <input type='button' id="add-job-cat" name='add-job-cat' class='button expanded add-job-btn' value='Add Category'/>
-
-                <input type="text" name="sub-category" id="sub-category">
-
+                <!-- <input type="text" name="sub-category" id="sub-category"> -->
+                <select name="sub-category" id="sub-category"> 
+                </select>
               <input type='button'  id="add-job-sub-cat" name='add-job-sub-cat' class='button expanded add-job-btn' value='Add Sub Category'/>
             </div>
 
@@ -55,7 +53,7 @@ if(selectedCategoryId == "none"){
     stack: true,
   });
 }else{
-  var subCatName = window. prompt("Enter a sub Category: ");
+  var subCatName = window.prompt("Enter a sub Category: ");
   var result= app.insertSubCategory(selectedCategoryId, subCatName);
 }
 });
@@ -97,7 +95,7 @@ $("#category").on("change",function(){
      setTimeout(function() {
         $("#sub-category").val(sub_cat_id);
     }, 300);
-    debugger;
+    // debugger;
     $("#file").val($data[5]);
   });
   }

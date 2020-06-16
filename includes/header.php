@@ -65,15 +65,22 @@ error_reporting(0);
   </head>
 
 
+  
 
    	<body>
       <header>
-        <a href="index.php" class="logo">
+        <a href="index.php" class="logo show-for-medium" >
         <img src="img/logo1.png" alt="logo">
         </a>
-        <div class="top-bar main-nav">
+        <div class="title-bar" data-responsive-toggle="main-navigation" data-hide-for="medium">
+          <button class="menu-icon" type="button" data-toggle>
+          </button>
+          
+      </div>
+
+        <div class="top-bar main-nav" id="main-navigation">
           <div class="top-bar-left nav-left" style="margin-left: 40px">
-            <ul class="dropdown menu" data-dropdown-menu>
+            <ul class="dropdown menu medium-horizontal vertical" data-responsive-menu="accordion medium-dropdown" data-dropdown-menu>
               <li>
                 <a href="#"> Category </a>
                 <ul class="menu">

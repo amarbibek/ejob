@@ -12,7 +12,7 @@ header img{
 
 .main-nav {
   background-color: black;
-  color: whitesmoke;
+  color: whitesmoke !important;
 }
 
 .nav-left, .nav-right{
@@ -30,3 +30,5 @@ header img{
 .nav-right .menu{
   background-color: black;
 }
+
+

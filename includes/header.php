@@ -50,7 +50,7 @@ error_reporting(0);
               $anchor="";
               $.each($data, function(i,v){
                 if(v !== ""){
-                  $anchor +='<a href="category_jobs.php?category='+ v.split("-")[0] +'&page_no=1">'+v.split("-")[1]+'</a>';
+                  $anchor +='<a href="category_jobs.php?category='+ v.split("-")[0] +'&page_no=1">'+v.split("-")[1] + " ("+ v.split("-")[2]+') </a>';
                 }
               });
               $anchor += '</div>';
@@ -82,7 +82,7 @@ error_reporting(0);
           <div class="top-bar-left nav-left" style="margin-left: 40px">
             <ul class="dropdown menu medium-horizontal vertical" data-responsive-menu="accordion medium-dropdown" data-dropdown-menu>
               <li>
-                <a href="#"> Category </a>
+                <a href="#"> Jobs </a>
                 <ul class="menu">
             <?php
                 $query="SELECT * FROM `job_category`";

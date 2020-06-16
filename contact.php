@@ -21,6 +21,9 @@ include_once("./db-connection/connection.php");
         <p><input type="submit" class="button expanded" id="contact-btn" name="btn-contact" value="Send"></input></p>
       </form>
     </div>
+    <div class="cell small-12 medium-6 large-4 align-center">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d56078.532404705635!2d77.13178423952836!3d28.542476608585527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x390d1dc392ac3985%3A0x3b20e3376e83bca1!2sJNU%20Administration%2C%20Jawaharlal%20Nehru%20University%2C%20Vice-%20Chancellors%20Office%2C%20JNU%20Ring%20Road%2C%20New%20Delhi%2C%20Delhi%2C%20India!3m2!1d28.5424057!2d77.16680389999999!5e0!3m2!1sen!2snp!4v1592314952537!5m2!1sen!2snp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
   </div>
 
 </div>

@@ -20,6 +20,8 @@ include_once("./db-connection/connection.php");
 					}
 					echo '</div>';
 					echo '<div class="job-details"><a href="#">'. $row["job_description"].'</a></div>';
+					echo '<div class="job-details"><a href="#">'. "Apply By : ". $row["time"].'</a></div>';
+					echo '<div class="job-details"><a href="#">'. "Created Date : ". $row["created_date"].'</a></div>';
 
 					echo '</div>';
 				}

@@ -70,12 +70,12 @@
           <p class="callout" style="background-color: rgb(23,121,186,0.2);color:whitesmoke">
              We send information about new and exciting job offers once a week, we will not spam you, subscribe if you are interested
           </p>
-          <form onsubmit="subscribe()">
+          <form>
             <div class="input-group">
               <span class="input-group-label" style="background:inherit;border:1px groove #2196f3"><i class="far fa-paper-plane fa-lg" style="color:#2196f3"></i></span>
-              <input class="input-group-field" type="email" id='newsletter_email' placeholder="Enter your Email" pattern="email" required>
+              <input class="input-group-field" type="email" id='newsletter_email' placeholder="Enter your Email" pattern="email">
                 <div class="input-group-button">
-                <input type="submit" class="button primary" id='newsletter_email_button' value='Subscribe'>
+                <input type="button" class="button primary" id='newsletter_email_button' value='Subscribe'>
               </div>
             </div>
           </form>
@@ -87,11 +87,11 @@
           <h2> Connect with us</h2>
         <div class="grid-y">
             <ul class="cell large-8 menu no-bullet align-center">
-              <li><a href='#'><img src="img/facebook.png" /> </a> </li>
-              <li><a href='#'><img src="img/whatsapp.png" /> </a></li>
-              <li><a href='#'><img src="img/linkedin.png" /> </a></li>
-              <li><a href='#'><img src="img/instagram.png" /> </a></li>
-              <li><a href='#'><img src="img/twitter.png" /> </a></li>
+              <li><a href='https://www.facebook.com/' target="_blank"><img src="img/facebook.png" /> </a> </li>
+              <li><a href='https://web.whatsapp.com/' target="_blank"><img src="img/whatsapp.png" /> </a></li>
+              <li><a href='https://www.linkedin.com/' target="_blank"><img src="img/linkedin.png" /> </a></li>
+              <li><a href='https://www.instagram.com/' target="_blank"><img src="img/instagram.png" /> </a></li>
+              <li><a href='https://twitter.com/' target="_blank"><img src="img/twitter.png" /> </a></li>
             </ul>
             <!-- <ul class="menu no-bullet align-center">
               <li><a href='#'><i class="fa fa-facebook fa-3x" style="color:#4267b2"></i> </a> </li>
@@ -129,11 +129,12 @@
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app-foundation.js"></script>
+    <script src="./toastr/js.js"></script>
 
     <script type="text/javascript">
-      if($(#contact).length){
-        console.log("Trippy");
-      }
+      // if($(#contact).length){
+      //   console.log("Trippy");
+      // }
     	var job_container=$(".job-container");
     	var searchedJobsHtml = "";
     	$(function(){
@@ -142,6 +143,23 @@
     			var searchedJobs= app.searchJobs(searchKey);
     		});
     	});
+      // function subscribe(){
+        $("#newsletter_email_button").on("click",function(){
+          debugger;
+          var email=$("#newsletter_email").val();
+          if(email == ""){
+            $.toast({
+              heading: "Warning",
+              text: "Enter your email",
+              position: "top-right",
+              icon: "warning",
+              stack: true,
+            });
+          }else{ 
+            var result= app.insertEmailList(email);
+          }
+        })
+      
     </script>
   </body>
 </html>

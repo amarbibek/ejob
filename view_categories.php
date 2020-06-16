@@ -45,7 +45,7 @@ var result= app.insertCategory(selectedCategoryId, catName);
 });
 $("#add-job-sub-cat").on("click",function(){
 var selectedCategoryId = $("#category"). children("option:selected").val();
-debugger;
+// debugger;
 if(selectedCategoryId == "none"){
   $.toast({
     heading: "Warning",

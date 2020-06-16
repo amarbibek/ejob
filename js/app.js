@@ -11,7 +11,8 @@ app = {
         debugger;
         if (val) {
           job = val.split("-eow-");
-          searchedJobsHtml += '<div class="cell large-4 small-12 meduim-6 jobs">';
+          searchedJobsHtml +=
+            '<div class="cell large-4 small-12 meduim-6 jobs">';
           if (job[4] != "") {
             searchedJobsHtml +=
               '<div class="job-pdf" ><a title="Download" href=  "' +
@@ -27,7 +28,10 @@ app = {
         }
       });
       if (jobs.length === 1) {
-        searchedJobsHtml = '<div class="cell large-12 small-12 meduim-12 jobs" style="height:50vh;"> <h1 class="callout">No jobs matching <em>'+ searchKey +'</em></h1><h3 class="secondary">Search again</h3> </div>';
+        searchedJobsHtml =
+          '<div class="cell large-12 small-12 meduim-12 jobs" style="height:50vh;"> <h1 class="callout">No jobs matching <em>' +
+          searchKey +
+          '</em></h1><h3 class="secondary">Search again</h3> </div>';
       }
       $(job_container).val("").html(searchedJobsHtml);
     });
@@ -52,6 +56,24 @@ app = {
           stack: true,
         });
         location.reload();
+      }
+    });
+  },
+  insertEmailList: function (email) {
+    $.ajax({
+      method: "GET",
+      url: "includes/insertEmailList.php?email=" + email,
+    }).done(function (msg) {
+      // debugger;
+      if (msg === "success") {
+        $.toast({
+          heading: "Added",
+          text: "You have been added to our email list!",
+          position: "top-right",
+          icon: "success",
+          stack: true,
+        });
+        // location.reload();
       }
     });
   },

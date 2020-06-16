@@ -6,47 +6,7 @@ check_admin_login();
 
 ?>
 
-<?php
-    if(isset($_POST['add-job-btn'])){
-      $job_title = $_POST['job-title'];
-      $job_detail = $_POST['job-detail'];
-      $category = $_POST['category'];
-      $sub_category = $_POST['sub-category'];
 
-    $targetDir = "./pdf/";
-    $fileName = basename($_FILES["file"]["name"]);
-    $targetFilePath = $targetDir . $fileName;
-    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-
-
-    if(isset($_POST["add-job-btn"]) && !empty($_FILES["file"]["name"])) {
-        //allow certain file formats
-        $allowTypes = array('jpg','png','jpeg','gif','pdf');
-        if(in_array($fileType, $allowTypes)){
-            //upload file to server
-            if(move_uploaded_file($_FILES["file"]["tmp_name"],__DIR__. $targetDir . $_FILES["file"]['name'])){
-                $statusMsg = "The file ".$fileName. " has been uploaded.";
-            }else{
-                $statusMsg = "Sorry, there was an error uploading your file.";
-            }
-        }else{
-            $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
-        }
-    }else{
-        $statusMsg = 'Please select a file to upload.';
-    }
-
-    $url = $targetDir . $fileName;
-
-    $query="INSERT INTO `jobs` (`institute`,`job_description`,`job_sub_category_id`,`pdf_url`,`is_visible`,`created_by`) VALUES ('$job_title','$job_detail','$sub_category','$url',1,2)";
-
-    if($conn->query($query) === TRUE){
-       echo '<script type="text/javascript">',
-            'display_success_toast();',
-             '</script>';
-        }
-      }
-?>
 
 <?include("/includes/admin-sidemenu.css"); ?>
     <div class="admin-wrapper">
@@ -146,24 +106,24 @@ check_admin_login();
 <script>
 var sub_cat_id=0;
 $(function(){
-$("#category").on("change",function(){
-  $hovered_ele =$("#sub-category");
-  var selectedCategory = $(this). children("option:selected"). val();
+// $("#category").on("change",function(){
+//   $hovered_ele =$("#sub-category");
+//   var selectedCategory = $(this). children("option:selected"). val();
 
-  $.get("./includes/get_sub_category.php",{cat_id:selectedCategory},function(htmldata){
+//   $.get("./includes/get_sub_category.php",{cat_id:selectedCategory},function(htmldata){
 
-    $data=htmldata.split("<br/>");
-    $anchor="<option value='none'> Select Sub-Category</option>";
-    $.each($data, function(i,v){
-      if(v !== ""){
-        $anchor +='<option value="'+ v.split("-")[0] + '">'+ v.split("-")[1]+ '</option> ';
-      }
-    });
+//     $data=htmldata.split("<br/>");
+//     $anchor="<option value='none'> Select Sub-Category</option>";
+//     $.each($data, function(i,v){
+//       if(v !== ""){
+//         $anchor +='<option value="'+ v.split("-")[0] + '">'+ v.split("-")[1]+ '</option> ';
+//       }
+//     });
 
-     $hovered_ele.html($anchor);
+//      $hovered_ele.html($anchor);
 
-  });
-  });
+//   });
+//   });
 
 });
   function edit_job(e){

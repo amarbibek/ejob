@@ -1,3 +1,47 @@
+<?php
+include_once("./db-connection/connection.php");
+
+    if(isset($_POST['add-job-btn'])){
+      $job_title = $_POST['job-title'];
+      $job_detail = $_POST['job-detail'];
+      $category = $_POST['category'];
+      $sub_category = $_POST['sub-category'];
+
+    $targetDir = "./pdf/";
+    $fileName = basename($_FILES["file"]["name"]);
+    $targetFilePath = $targetDir . $fileName;
+    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+
+    if(isset($_POST["add-job-btn"]) && !empty($_FILES["file"]["name"])) {
+        //allow certain file formats
+        $allowTypes = array('jpg','png','jpeg','gif','pdf');
+        if(in_array($fileType, $allowTypes)){
+            //upload file to server
+            if(move_uploaded_file($_FILES["file"]["tmp_name"],__DIR__. $targetDir . $_FILES["file"]['name'])){
+                $statusMsg = "The file ".$fileName. " has been uploaded.";
+            }else{
+                $statusMsg = "Sorry, there was an error uploading your file.";
+            }
+        }else{
+            $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+        }
+    }else{
+        $statusMsg = 'Please select a file to upload.';
+    }
+
+    $url = $targetDir . $fileName;
+
+    $query="INSERT INTO `jobs` (`institute`,`job_description`,`job_sub_category_id`,`pdf_url`,`is_visible`,`created_by`) VALUES ('$job_title','$job_detail','$sub_category','$url',1,2)";
+
+    if($conn->query($query) === TRUE){
+       echo '<script type="text/javascript">',
+            'display_success_toast();',
+             '</script>';
+        }
+      }
+?>
+
 <div class="reveal" style="height: 80vh;" id="addjob" data-reveal>
   <div class="grid-x grid-margin-x grid-padding-x align-center">
     <div class="cell large-8 small-12 medium-10 " id="job-entry">
@@ -9,7 +53,7 @@
           <textarea id='enter-job-details' name='job-detail' required> </textarea><br />
 
           <div id='add-tag'>
-              <select name="category" id="category">
+              <select name="category" id="category1">
                 <option value='none'> Select Category</option>
                 <?php
                   $query="SELECT * FROM `job_category`";
@@ -22,7 +66,7 @@
                 ?>
               </select>
 
-              <select name="sub-category" id="sub-category"> 
+              <select name="sub-category" id="sub-category1"> 
                 </select>
 
             <?php
@@ -141,8 +185,8 @@
     	var job_container=$(".job-container");
     	var searchedJobsHtml = "";
     	$(function(){
-        $("#category").on("change",function(){
-          $hovered_ele =$("#sub-category");
+        $("#category1").on("change",function(){
+          $hovered_ele =$("#sub-category1");
           var selectedCategory = $(this). children("option:selected"). val();
           // debugger;
           $.get("./includes/get_sub_category.php",{cat_id:selectedCategory},function(htmldata){

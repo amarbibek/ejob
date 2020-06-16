@@ -22,21 +22,24 @@
                 ?>
               </select>
 
+              <select name="sub-category" id="sub-category"> 
+                </select>
+
             <?php
               // $arr = ["Post", "Qualification"];
               // for ($i= 1; $i < 3; $i++) {
-                echo '<select name="category" id="category">';
-                echo '<option value="none"> Select '. $arr[$i-1]. '</option>';
-                $query="SELECT * FROM `job_sub_category`";
-                $result = $conn->query($query);
-                if ($result->num_rows > 0) {
-                  while($row = $result->fetch_assoc()) {
-                    if($row['job_category_id'] == $i) {
-                      echo '<option value="'.$row['job_category_id'].'">'.$row['sub_category'].'</option> ';
-                    }
-                  }
-                }
-                echo '</select>';
+              //   echo '<select name="category" id="category">';
+              //   echo '<option value="none"> Select '. $arr[$i-1]. '</option>';
+              //   $query="SELECT * FROM `job_sub_category`";
+              //   $result = $conn->query($query);
+              //   if ($result->num_rows > 0) {
+              //     while($row = $result->fetch_assoc()) {
+              //       if($row['job_category_id'] == $i) {
+              //         echo '<option value="'.$row['job_category_id'].'">'.$row['sub_category'].'</option> ';
+              //       }
+              //     }
+              //   }
+              //   echo '</select>';
               // }
             ?>
           </div>
@@ -138,6 +141,28 @@
     	var job_container=$(".job-container");
     	var searchedJobsHtml = "";
     	$(function(){
+        $("#category").on("change",function(){
+          $hovered_ele =$("#sub-category");
+          var selectedCategory = $(this). children("option:selected"). val();
+          // debugger;
+          $.get("./includes/get_sub_category.php",{cat_id:selectedCategory},function(htmldata){
+            // debugger;
+            $data=htmldata.split("<br/>"); 
+            // $anchor=$hovered_ele.text()+'<div class="dropdown-content">';
+            $anchor="<option value='none'> Select Sub-Category</option>";//$hovered_ele.text(); //+'<div class="dropdown-content">';
+            $.each($data, function(i,v){
+              if(v !== ""){
+                $anchor +='<option value="'+ v.split("-")[0] + '">'+ v.split("-")[1]+ '</option> ';
+              }
+            });
+            // $anchor += '</div>'
+            $hovered_ele.html($anchor);
+            //  alert("a");
+            //  $hovered_ele.after($anchor);
+              // $($hovered_ele).parent().find(".dropdown-content").val("").html($anchor);
+
+          });
+        });
     		$("#search-input").on("keyup",function(){
     			var searchKey=$("#search-input").val();
     			var searchedJobs= app.searchJobs(searchKey);

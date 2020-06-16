@@ -4,6 +4,7 @@
       <li><a href="admin.php?page_no=1">Admin Home</a></li>
       <li><a href="view_users.php">Users</a></li>
       <li><a href="view_categories.php">Categories</a></li>
+      <li><a href="../ejob/Email/index.php">Trigger Email List</a></li>
     </ul>
   </div>
 

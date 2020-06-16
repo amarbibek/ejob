@@ -38,6 +38,7 @@ include_once("./db-connection/connection.php");
        echo '<script type="text/javascript">',
             'display_success_toast();',
              '</script>';
+        
         }
       }
 ?>

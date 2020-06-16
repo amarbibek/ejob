@@ -49,7 +49,8 @@ require 'PHPMailerAutoload.php';
 			echo 'Message could not be sent.';
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 	} else {
-		echo 'Message has been sent to '.$count.' emails <br><br>';
+		echo 'Message has been sent to '.$count.' emails <br><br>
+		<a href="../admin.php?page_no=1">Go To Admin Home Page</a>';
 	}
 // }
 ?>

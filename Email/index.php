@@ -10,7 +10,7 @@ require 'PHPMailerAutoload.php';
 		$mail->Host = 'smtp.gmail.com';  								// Specify main and backup SMTP servers
 		$mail->SMTPAuth = true;                                // Enable SMTP authentication
 		$mail->Username = 'imamar020@gmail.com';         			  // SMTP username
-		$mail->Password = 'Bkumar020'; 
+		$mail->Password = ''; 
 		$mail->SMTPSecure = 'tls';                     // SMTP password
 		$mail->Port = 587;                                   // TCP port to connect to
 		$mail->setFrom('imamar020@gmail.com', 'Job Recommendation');

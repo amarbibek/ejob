@@ -38,12 +38,12 @@ include_once("./db-connection/connection.php");
        echo '<script type="text/javascript">',
             'display_success_toast();',
              '</script>';
-        
+
         }
       }
 ?>
 
-<div class="reveal" style="height: 80vh;" id="addjob" data-reveal>
+<div class="reveal add-job-reveal" style="height: 80vh;" id="addjob" data-reveal>
   <div class="grid-x grid-margin-x grid-padding-x align-center">
     <div class="cell large-8 small-12 medium-10 " id="job-entry">
         <form id='add-job' action="#" method="POST" enctype="multipart/form-data">
@@ -67,7 +67,7 @@ include_once("./db-connection/connection.php");
                 ?>
               </select>
 
-              <select name="sub-category" id="sub-category1"> 
+              <select name="sub-category" id="sub-category1">
                 </select>
 
             <?php
@@ -90,12 +90,12 @@ include_once("./db-connection/connection.php");
           </div>
           <div class="grid-x">
             <div class="text-left cell large-6 small-6 medium-6" id='upload-file'>
-              <label for="file" class="button">Upload File</label>
+              <label for="file" class="button filex" title="Upload">Upload File</label>
               <input type="file" id="file" class="show-for-sr">
             </div>
 
             <div class="text-right cell large-6 small-6 medium-6" id='buttons'>
-              <input type='submit' class="button add-job-btn" name='add-job-btn' value='Add job'/>
+              <button type='submit' class="button add-job-btn" name='add-job-btn'>Add job</button>
             </div>
           </div>
 
@@ -192,7 +192,7 @@ include_once("./db-connection/connection.php");
           // debugger;
           $.get("./includes/get_sub_category.php",{cat_id:selectedCategory},function(htmldata){
             // debugger;
-            $data=htmldata.split("<br/>"); 
+            $data=htmldata.split("<br/>");
             // $anchor=$hovered_ele.text()+'<div class="dropdown-content">';
             $anchor="<option value='none'> Select Sub-Category</option>";//$hovered_ele.text(); //+'<div class="dropdown-content">';
             $.each($data, function(i,v){
@@ -225,11 +225,11 @@ include_once("./db-connection/connection.php");
               icon: "warning",
               stack: true,
             });
-          }else{ 
+          }else{
             var result= app.insertEmailList(email);
           }
         })
-      
+
     </script>
   </body>
 </html>

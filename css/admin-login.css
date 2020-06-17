@@ -1,6 +1,7 @@
 .log-in-form,
 .add-cat-form,
-.contact-us-form {
+.contact-us-form,
+.add-cat-form-new {
   border: 1px groove black;
   padding: 1rem;
   border-radius: 0;

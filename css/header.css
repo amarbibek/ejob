@@ -15,7 +15,7 @@ header img{
   color: whitesmoke !important;
 }
 
-.nav-left, .nav-right{
+.nav-left{
   background-color: black;
 }
 
@@ -27,8 +27,24 @@ header img{
   border: none
 }
 
-.nav-right .menu{
-  background-color: black;
+
+
+/* search */
+.search-main {
+  margin: 5px;
+  width: 90vw;
+  height: 50px;
+}
+
+.search-input-group{
+  position: absolute;
+  width: 80%;
+  margin: 0 9%;
 }
 
 
+@media screen and (max-width: 39.9375em) {
+  .top-bar-right {
+    display: none;
+  }
+}

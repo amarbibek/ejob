@@ -17,7 +17,7 @@ footer ul a:hover{
   background-color: rgb(23,121,186,.1);
 }
 footer h2{
-  color: #2196f3; 
+  color: #2196f3;
   font-size: min(4vh,4vw);
   font-family: "Times New Roman", Times, serif;
   padding-top: 10px;
@@ -51,4 +51,28 @@ footer ul a:hover{
 
 #gototop:hover {
   cursor: pointer;
+}
+.add-job-reveal{
+  border: 1.2px outset #101010;
+  box-shadow: 5px 10px #101010;
+  background-color: rgba(30,30,30,.99);
+  border-radius: 3.7%;
+  color: whitesmoke;
+}
+
+.add-job-reveal label{
+  color: whitesmoke;
+  font-family: initial;
+}
+
+.add-job-reveal input,
+.add-job-reveal select,
+.add-job-reveal textarea,
+.add-job-reveal button,
+.add-job-reveal .grid-x .cell  .filex{
+  border: 1.2px outset #101010;
+  box-shadow: 5px 10px #101010;
+  background-color: rgba(30,30,30,.99);
+  border-radius: 3.7%;
+  color: whitesmoke;
 }

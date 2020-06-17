@@ -25,6 +25,10 @@ error_reporting(0);
     <link rel="stylesheet" href="./css/admin-jobs.css">
     <link rel="stylesheet" href="./toastr/css.css">
 
+    <link href="attention/attention.css" rel="stylesheet">
+    <script src="attention/attention.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/16d1e0ba88.js" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -65,7 +69,7 @@ error_reporting(0);
   </head>
 
 
-  
+
 
    	<body>
       <header>
@@ -75,7 +79,7 @@ error_reporting(0);
         <div class="title-bar" data-responsive-toggle="main-navigation" data-hide-for="medium">
           <button class="menu-icon" type="button" data-toggle>
           </button>
-          
+
       </div>
 
         <div class="top-bar main-nav" id="main-navigation">
@@ -103,22 +107,32 @@ error_reporting(0);
               <li><a href="about.php">About</a></li>
               <li><a href="contact.php">Contact</a></li>
               <?php
-                if(!isset($_SESSION['loggedIn'])){
-                   echo '<li><a href="admin-login.php">Admin Login</a></li>';
-                  } else {
+                if(isset($_SESSION['loggedIn'])){
                   echo '<li><a href="admin.php?page_no=1">Admin Panel</a></li>';
+                }
+                ?>
+                </ul>
+              </div>
+              <div class="top-bar-right nav-left">
+              <?php
+                if(!isset($_SESSION['loggedIn'])){
+                  echo '<ul class="menu">';
+                   echo '<li><a href="admin-login.php">Admin Login</a></li>';
+
+                  } else {
+                    echo '<ul class="menu">';
                     echo '<li><a href="logout.php" title="logout">Logout</a></li>';
+                  ;
+                }
+              ?>
+              <?php
+                if(isset($_SESSION['loggedIn'])){
+                  include("./includes/admin-sidemenu.php");
                 }
               ?>
               </ul>
             </div>
 
-          <?php
-            if(!isset($_SESSION['loggedIn'])){
-              include("./includes/search.php");
-              } else {
-              include("./includes/admin-sidemenu.php");
-            }
-          ?>
         </div>
+
       </header>

@@ -14,6 +14,7 @@
         <li class="cell large-2 small-2 medium-2 " id="admin-menu" style="display:none;">
           <button class="button" type="button"  data-toggle="adminSideMenu" style="cursor:pointer;padding:0;margin:0;height:100%;width:100%" onclick="adminDown()">
           <span class="title-bar-title"><i class="fas fa-chevron-circle-down"></i></span>
+          <!-- <span class="title-bar-title"><i class="fas fa-chevron-circle-down"></i></span> -->
         </button></li>
       <ul>
 

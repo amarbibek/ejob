@@ -2,6 +2,24 @@
 include("./includes/header.php");
 include_once("./db-connection/connection.php");
 ?>
+<?php
+if(isset($_POST['btn-contact'])){
+  $name = $_POST['username'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  $query="INSERT INTO `contactus` (`name`,`email`,`message`) VALUES ('$name','$email','$message')";
+      if($conn->query($query) === TRUE){
+        //  echo 'success';
+         echo '<script>$.toast({
+              heading: "Success",
+              text: "You will be contacted soon!",
+              position: "top-right",
+              icon: "success",
+              stack: true,
+            });</script>';
+      }
+}
+?>
 
 <div id="contact">
   <hr>
@@ -13,7 +31,8 @@ include_once("./db-connection/connection.php");
           <input type="text" name="username" placeholder="Please enter your name" required>
         </label>
         <label>Email
-          <input type="email" pattern="email" name="email" placeholder="Please enter your name" required>
+          <input type="email" name="email" placeholder="Please enter your name" required>
+          <!-- <input type="email" pattern="email" name="email" placeholder="Please enter your name" required> -->
         </label>
         <label>Message
           <textarea  name="message" placeholder="" required></textarea>

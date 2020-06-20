@@ -25,6 +25,7 @@
   border: 1px groove black;
   box-shadow: 4px 5px black;
   border-radius: 2%;
+  background-color: whitesmoke;
 }
 
 .admin-job-title a{

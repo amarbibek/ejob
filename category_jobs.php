@@ -17,10 +17,7 @@
               echo '<div class="job">';
                 echo '<div class="job-main">';
                   echo '<div class="grid-x">';
-                    echo '<div class="cell large-11 medium-10 small-10 job-title"><a href="#">'. $row["institute"].'</a></div>';
-                    if($row['pdf_url']!=NULL){
-                        echo '<div class="cell large-1 medium-2 small-2 job-pdf text-right"><a href=  "'.$row["pdf_url"].'" target="_blank" title="Download">&#10247;</a></div>';
-                    }
+                    echo '<div class="cell large-12 medium-12 small-12 job-title"><a href="#">'. $row["institute"].'</a></div>';
                   echo '</div>';
                   echo '<div class="job-details"><a href="#">'. $row["job_description"].'</a></div>';
                   echo '<div class="job-details"><a href="#">'."Apply By : ". $row["time"].'</a></div>';
@@ -28,6 +25,9 @@
                   echo '</div>';
                   echo '<div class="overlay">';
                     echo '<div class="visit-site">';
+                    if($row['pdf_url']!=NULL){
+                      echo '<div class="job-pdf" ><a title="Download PDF" href=  "'.$row["pdf_url"].'" target="_blank"><i class="fa fa-download"></i></a></div>';
+                    }
                     echo '<a href="'. $row["website"].'" target="_blank"> Apply Here <i class="fas fa-arrow-circle-right"></i> </a>';
                   echo '</div>';
                 echo '</div>';

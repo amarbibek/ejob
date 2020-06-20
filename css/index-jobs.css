@@ -3,7 +3,7 @@
 }
 
 .job-title a{
-  font-family: sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
   color: #2196f3;
 }
@@ -12,7 +12,7 @@
   color: #2196f3;
 }
 .job-details a{
-  font-family: serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 16px;
   color:  #101010;
 }
@@ -20,13 +20,13 @@
   color:  #101010;
 }
 
-.job-pdf{
-  float: right;
+/* .job-pdf{
+  float: center;
   color: #2e1435;
-}
+} */
 
 .job {
-  position: relative;
+    position: relative;
 }
 
 .overlay {
@@ -64,15 +64,15 @@
 
 .job:hover .job-title a{
   color: #010101;
-  text-decoration: underline;
-  text-decoration-style: double;
-  text-decoration-color: rgb(30,40,70);
+  font-weight: bolder;
 }
 .job:hover .job-details a{
-  color: whitesmoke;
+  visibility: hidden;
 }
 
-
+#search-input:focus{
+  outline: 2px groove #2196f3;
+}
 
 /* .jobs{
   border: 1px groove red;
@@ -103,3 +103,10 @@
   opacity: 1;
   transform: scale(1);
 } */
+
+@media(min-width: 1000px){
+  .jobs{
+    min-height: 20vw;
+    min-width: 25vw;
+  }
+}

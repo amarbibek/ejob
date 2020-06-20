@@ -21,9 +21,14 @@
   display: flex;
   flex-direction: column;
 }
+.admin-jobs:hover {
+  border: 1px groove black;
+  box-shadow: 4px 5px black;
+  border-radius: 2%;
+}
 
 .admin-job-title a{
-  font-family: sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
   color: #2196f3;
   cursor: default;
@@ -60,7 +65,7 @@
   height: 35px;
   cursor: default;
   color: #fff;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 14px;
   border: none;
 }

@@ -2,7 +2,7 @@ footer {
   width: 100%;
   background-color: rgb(0,0,0,0.9);
   color: whitesmoke;
-  font-family: 20px, "Courier New", Courier, monospace;
+  font-family: 20px,'Roboto Condensed', sans-serif;
   font-weight: 5px;
 }
 
@@ -19,7 +19,7 @@ footer ul a:hover{
 footer h2{
   color: #2196f3;
   font-size: min(4vh,4vw);
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Roboto Condensed', sans-serif;
   padding-top: 10px;
   font-weight: bolder;
 }
@@ -43,7 +43,7 @@ footer ul a:hover{
   position: fixed;
   bottom: 1vh;
   right: 1vh;
-  font-family: sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
   font-weight: bolder;
   color: #4caf50;
@@ -55,7 +55,7 @@ footer ul a:hover{
 .add-job-reveal{
   border: 1.2px outset #101010;
   box-shadow: 5px 10px #101010;
-  background-color: rgba(30,30,30,.99);
+  background-color: rgba(120,120,120,.98);
   border-radius: 3.7%;
   color: whitesmoke;
 }
@@ -72,7 +72,7 @@ footer ul a:hover{
 .add-job-reveal .grid-x .cell  .filex{
   border: 1.2px outset #101010;
   box-shadow: 5px 10px #101010;
-  background-color: rgba(30,30,30,.99);
+  background-color: rgba(70,70,70,.99);
   border-radius: 3.7%;
   color: whitesmoke;
 }

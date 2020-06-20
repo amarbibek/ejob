@@ -8,6 +8,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   /* font-family: "Times New Roman", Times, serif; */
   overflow-x: hidden;
+  background-color: #EEE5E5;
 }
 
 .prev-next{

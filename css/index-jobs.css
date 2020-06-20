@@ -26,9 +26,16 @@
 } */
 
 .job {
+    padding-left: 2px;
     position: relative;
+    background-color: whitesmoke;
+    outline: 1px groove #2196f3;
+    box-shadow: 4px 4px #2196f3;
 }
-
+.job:hover{
+  outline: 1px groove black;
+  box-shadow: 6px 6px black;
+}
 .overlay {
   position: absolute;
   bottom: 100%;

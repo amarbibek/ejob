@@ -7,20 +7,20 @@ check_admin_login();
     <hr>
     <div class="grid-x align-center grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
       <div class="cell small-12 medium-6 large-4 align-center" id='job-entry'>
-          <form id='add-job-cat-form' action="#" method="POST" enctype="multipart/form-data" class="add-cat-form">
+          <!-- <form id='add-job-cat-form' action="#" method="POST" enctype="multipart/form-data" class="add-cat-form">
             <h2> Add Job Categories </h2>
             <div id='add-tag'>
               <div class="input-group">
                 <select name="category" id="category">
                   <option value='none'> Select Category</option>
                   <?php
-                    $query="SELECT * FROM `job_category`";
-                    $result = $conn->query($query);
-                    if ($result->num_rows > 0) {
-                      while($row = $result->fetch_assoc()) {
-                      echo '<option value="'.$row['job_category_id'].'">'.$row['category'].'</option> ';
-                      }
-                    }
+                    // $query="SELECT * FROM `job_category`";
+                    // $result = $conn->query($query);
+                    // if ($result->num_rows > 0) {
+                    //   while($row = $result->fetch_assoc()) {
+                    //   echo '<option value="'.$row['job_category_id'].'">'.$row['category'].'</option> ';
+                    //   }
+                    // }
                     ?>
                 </select>
                 <button  id="add-job-cat" name='add-job-cat' class='button  add-job-btn'> <i class="fas fa-plus-square"></i></button>
@@ -31,19 +31,18 @@ check_admin_login();
               <button  id="add-job-sub-cat" name='add-job-sub-cat' class='button add-job-btn' data-open="addSubCategory"><i class="fas fa-plus-square"></i></button>
               </div>
             </div>
-
-          </form>
+          </form> -->
         </div>
       </div>
-      <hr>
+      <!-- <hr> -->
       <div class="grid-x align-center grid-margin-x grid-margin-y grid-padding-x grid-padding-y">
         <div class="cell small-10 medium-6 large-4 align-center add-cat-form-new">
               <h2> Add Job Categories </h2>
               <div>
                 <div class="input-group">
-                  <select>
+                  <select name="category" id="category">
                     <option value='none'> Select Category</option>
-                    <!-- <?php
+                      <?php
                       $query="SELECT * FROM `job_category`";
                       $result = $conn->query($query);
                       if ($result->num_rows > 0) {
@@ -51,12 +50,12 @@ check_admin_login();
                         echo '<option value="'.$row['job_category_id'].'">'.$row['category'].'</option> ';
                         }
                       }
-                      ?> -->
+                      ?> 
                   </select>
                   <button  class="button primary" id="catName" name="button" value="catName"><i class="fas fa-plus-square"></i></button>
                 </div>
                 <div class="input-group">
-                  <select>
+                  <select name="sub-category" id="sub-category">
                   </select>
                   <button  class="button primary" id="subCatName" name="button" value="subCatName"><i class="fas fa-plus-square"></i></button>
                 </div>
@@ -91,17 +90,33 @@ $('#catName').on('click', function() {
         content: 'Enter New Category',
         onSubmit: function(component, value) {
             catName = value;console.log(catName);
+            var selectedCategoryId = $("#category"). children("option:selected").val();
+            var result= app.insertCategory(selectedCategoryId, catName);
         }
     });
 });
 $('#subCatName').on('click', function() {
-    new Attention.Prompt({
-        title: 'Enter Sub Category ',
-        content: 'Enter New Sub Category',
-        onSubmit: function(component, value) {
-            subCatName = value;console.log(subCatName);
-        }
-    });
+  var selectedCategoryId = $("#category"). children("option:selected").val();
+  debugger;
+  if(selectedCategoryId == "none"){
+  $.toast({
+    heading: "Warning",
+    text: "Select a category!",
+    position: "top-right",
+    icon: "warning",
+    stack: true,
+  });
+}else{ 
+  new Attention.Prompt({
+      title: 'Enter Sub Category ',
+      content: 'Enter New Sub Category',
+      onSubmit: function(component, value) {
+          subCatName = value;
+          // console.log(subCatName);
+          var result= app.insertSubCategory(selectedCategoryId, subCatName);
+      }
+  });
+}
 });
 // ----------------------------------------------------------------------------------
 var sub_cat_id=0;

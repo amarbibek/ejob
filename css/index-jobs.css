@@ -29,11 +29,11 @@
     padding-left: 2px;
     position: relative;
     background-color: whitesmoke;
-    outline: 1px groove #2196f3;
+    /* outline: 1px groove #2196f3; */
     box-shadow: 4px 4px #2196f3;
 }
 .job:hover{
-  outline: 1px groove black;
+  /* outline: 1px groove black; */
   box-shadow: 6px 6px black;
 }
 .overlay {
@@ -111,8 +111,8 @@
   transform: scale(1);
 } */
 
-@media(min-width: 1000px){
-  .jobs{
+@media(min-width: 962px){
+  .job{
     min-height: 20vw;
     min-width: 25vw;
   }

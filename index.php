@@ -4,7 +4,7 @@ include_once("./db-connection/connection.php");
 ?>
 
 <?php
-		include("./includes/search.php");
+	include("./includes/search.php");
 ?>
 <div class="grid-container">
 	<div class= "grid-x grid-padding-x grid-padding-y job-container" >

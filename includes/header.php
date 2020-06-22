@@ -44,7 +44,16 @@ error_reporting(0);
             icon: 'success',
             stack: true
           });
-        }
+      }
+      function display_success_edit_toast(){
+        $.toast({
+            heading: 'Job Updated',
+            text: 'Job has been updated successfully!',
+            position: 'top-right',
+            icon: 'success',
+            stack: true
+          });
+      }
         $(function(){
           $(".dropbtn").hover(function(){
             $hovered_ele =$(this);

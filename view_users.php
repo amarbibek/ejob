@@ -1,6 +1,8 @@
 <?php
 include("./includes/header.php");
 include_once("./db-connection/connection.php");
+include("./filters/functions.php");
+check_admin_login();
 ?>
 
 
@@ -30,9 +32,10 @@ include_once("./db-connection/connection.php");
 
 					echo '</div>';
 
-					if ($counter > 5){
-						$counter = -1;
-					}
+					// if ($counter > 5){
+					// 	$counter = -1;
+					// }
+					$counter %=5;
 					$counter++;
 				}
 			} else {

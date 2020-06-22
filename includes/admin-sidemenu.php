@@ -9,8 +9,8 @@
   </div>
 
 
-      <ul class="menu grid-x" style="background: black">
-        <li class="cell large-10 small-10 medium-10" id="add-job-main" ><button class="button"   data-open="addjob" style="width: 100%;">Add Job</button></li>
+      <ul class="menu grid-x" style="background: #c7c4bd">
+        <li class="cell large-10 small-10 medium-10" id="add-job-main" ><button class="button"   data-open="addjob" style="width: 100%;" id="add-job-btn1" onclick="add_job(this)">Add Job</button></li>
         <li class="cell large-2 small-2 medium-2 " id="admin-menu" style="display:none;">
           <button class="button" type="button"  data-toggle="adminSideMenu" style="cursor:pointer;padding:0;margin:0;height:100%;width:100%" onclick="adminDown()">
           <span class="title-bar-title"><i class="fas fa-chevron-circle-down"></i></span>

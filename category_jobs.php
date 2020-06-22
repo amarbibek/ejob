@@ -1,7 +1,8 @@
 <?php
     include("./includes/header.php");
-
     include("./db-connection/connection.php");
+    include("./filters/functions.php");
+    check_admin_login();
 
     echo '<div class="grid-container">';
     echo '<div class= "grid-x grid-padding-x grid-padding-y job-container">';
@@ -26,7 +27,7 @@
                   echo '<div class="overlay">';
                     echo '<div class="visit-site">';
                     if($row['pdf_url']!=NULL){
-                      echo '<div class="job-pdf" ><a title="Download PDF" href=  "'.$row["pdf_url"].'" target="_blank"><i class="fa fa-download"></i></a></div>';
+                      echo '<div class="job-pdf" ><a title="Download PDF" href=  "../ejob/'.$row["pdf_url"].'" target="_blank"><i class="fa fa-download"></i></a></div>';
                     }
                     echo '<a href="'. $row["website"].'" target="_blank"> Apply Here <i class="fas fa-arrow-circle-right"></i> </a>';
                   echo '</div>';

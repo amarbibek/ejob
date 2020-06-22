@@ -7,10 +7,10 @@ include_once("./db-connection/connection.php");
       $category = $_POST['category'];
       $sub_category = $_POST['sub-category'];
 
-    $targetDir = "./pdf/";
-    $fileName = basename($_FILES["file"]["name"]);
-    $targetFilePath = $targetDir . $fileName;
-    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+      $targetDir = "../../pdf/";
+      $fileName = basename($_FILES["file"]["name"]);
+      $targetFilePath = $targetDir . $fileName;
+      $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
 
     if(isset($_POST["add-job-btn"]) && !empty($_FILES["file"]["name"])) {
@@ -20,17 +20,21 @@ include_once("./db-connection/connection.php");
             //upload file to server
             if(move_uploaded_file($_FILES["file"]["tmp_name"],__DIR__. $targetDir . $_FILES["file"]['name'])){
                 $statusMsg = "The file ".$fileName. " has been uploaded.";
-            }else{
+              }else{
                 $statusMsg = "Sorry, there was an error uploading your file.";
+              }
+            }else{
+              $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
             }
-        }else{
-            $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
-        }
-    }else{
-        $statusMsg = 'Please select a file to upload.';
-    }
-
-    $url = $targetDir . $fileName;
+          }else{
+            $statusMsg = 'Please select a file to upload.';
+          }
+          
+          // $url = $targetDir . $fileName;
+          $url = "/pdf/". $fileName;
+          // echo $url;
+          // echo $statusMsg;
+          // exit();
 
     $query="INSERT INTO `jobs` (`institute`,`job_description`,`job_sub_category_id`,`pdf_url`,`is_visible`,`created_by`) VALUES ('$job_title','$job_detail','$sub_category','$url',1,2)";
 
@@ -48,6 +52,8 @@ include_once("./db-connection/connection.php");
     <div class="cell large-8 small-12 medium-10 " id="job-entry">
         <form id='add-job' action="#" method="POST" enctype="multipart/form-data">
 
+          <!-- <input id='hdn-job-id' name='hdn-job-id' style="display:none"> </input> <br /> -->
+          <input id='hdn-job-id' name='hdn-job-id' > </input> <br />
           <label id='label-job-title' name='label-job-title'> Job Title: </label> <br />
           <textarea name='job-title' id='enter-job-title' required> </textarea><br />
           <label id='label-job-details' name='label-job-details'> Job Details: </label><br />
@@ -91,11 +97,12 @@ include_once("./db-connection/connection.php");
           <div class="grid-x">
             <div class="text-left cell large-6 small-6 medium-6" id='upload-file'>
               <label for="file" class="button filex" title="Upload">Upload File</label>
-              <input type="file" id="file" class="show-for-sr">
+              <input type="file" id="file" class="show-for-sr" name="file">
             </div>
 
             <div class="text-right cell large-6 small-6 medium-6" id='buttons'>
-              <button type='submit' class="button add-job-btn" name='add-job-btn'>Add job</button>
+              <button type='submit' class="button add-job-btn" name='add-job-btn' id="add-job-btn">Add job</button>
+              <button type='submit'  class="button update-job-btn"  id="update-job-btn" name='update-job-btn'>Update job</button>
             </div>
           </div>
 
@@ -215,7 +222,7 @@ include_once("./db-connection/connection.php");
     	});
       // function subscribe(){
         $("#newsletter_email_button").on("click",function(){
-          debugger;
+          // debugger;
           var email=$("#newsletter_email").val();
           if(email == ""){
             $.toast({

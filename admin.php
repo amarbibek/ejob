@@ -218,7 +218,11 @@ $(function(){
   });
   }
   function add_job(){
-    // debugger;
+    $("#hdn-job-id").val("");
+    $("#enter-job-title").val("");
+    $("#enter-job-details").val("");
+    $("#category1").val("");
+    $("#sub-category1").val("");
     $("#update-job-btn").hide();
     $("#add-job-btn").show();
   }

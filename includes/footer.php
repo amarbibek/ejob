@@ -53,7 +53,7 @@ include_once("./db-connection/connection.php");
         <form id='add-job' action="#" method="POST" enctype="multipart/form-data">
 
           <!-- <input id='hdn-job-id' name='hdn-job-id' style="display:none"> </input> <br /> -->
-          <input id='hdn-job-id' name='hdn-job-id' > </input> <br />
+          <input id='hdn-job-id' name='hdn-job-id' style="display:none" > </input> <br />
           <label id='label-job-title' name='label-job-title'> Job Title: </label> <br />
           <textarea name='job-title' id='enter-job-title' required> </textarea><br />
           <label id='label-job-details' name='label-job-details'> Job Details: </label><br />

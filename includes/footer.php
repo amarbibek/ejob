@@ -29,7 +29,7 @@ include_once("./db-connection/connection.php");
           }else{
             $statusMsg = 'Please select a file to upload.';
           }
-          
+
           // $url = $targetDir . $fileName;
           $url = "/pdf/". $fileName;
           // echo $url;
@@ -47,7 +47,7 @@ include_once("./db-connection/connection.php");
       }
 ?>
 
-<div class="reveal add-job-reveal" style="height: 80vh;" id="addjob" data-reveal>
+<div class="reveal add-job-reveal"  id="addjob" data-reveal>
   <div class="grid-x grid-margin-x grid-padding-x align-center">
     <div class="cell large-8 small-12 medium-10 " id="job-entry">
         <form id='add-job' action="#" method="POST" enctype="multipart/form-data">

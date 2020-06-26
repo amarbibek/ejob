@@ -34,7 +34,7 @@ require 'PHPMailerAutoload.php';
 			echo "No Email Addresses Found In Email List!";
 		}
 		$mail->isHTML(true);                                  // Set email format to HTML
-		$mail->Subject = 'Test Email Subject';
+		$mail->Subject = 'New Job Added';
 		$mail->Body    = $htmlversion;
 		$mail->AltBody = $textVersion;
 		$mail->SMTPOptions = array(

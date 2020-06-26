@@ -2,7 +2,7 @@
     include("./includes/header.php");
     include("./db-connection/connection.php");
     include("./filters/functions.php");
-    check_admin_login();
+    // check_admin_login();
 
     echo '<div class="grid-container">';
     echo '<div class= "grid-x grid-padding-x grid-padding-y job-container">';
